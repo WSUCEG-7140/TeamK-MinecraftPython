@@ -854,8 +854,11 @@ class Window(pyglet.window.Window):
         glColor3d(0, 0, 0)
         self.reticle.draw(GL_LINES)
 
-##
+
 def test_GLFog():
+    """ Test setup_fog function for dependency errors. New dependencies found in OpenGL.
+    
+    """
     try:
         setup_fog()
         assert True
