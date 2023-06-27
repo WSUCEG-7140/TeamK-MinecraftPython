@@ -868,7 +868,7 @@ def setup_fog():
     """ Configure the OpenGL fog properties.
 
     """
-    # Required addition for glCheckError function within OpenGL
+    # Required addition for glCheckError function within OpenGL, glEnd() is not needed
     glBegin(GL_POINTS) 
 
     # Enable fog. Fog "blends a fog color with each rasterized pixel fragment's
