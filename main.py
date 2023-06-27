@@ -11,6 +11,9 @@ from pyglet.gl import *
 from pyglet.graphics import TextureGroup
 from pyglet.window import key, mouse
 
+from OpenGL.GL import *
+from OpenGL.GLU import *
+
 TICKS_PER_SEC = 60
 
 # Size of sectors used to ease block loading.
@@ -860,12 +863,14 @@ def test_fog():
         assert True
     except:
         assert False
-        
+
 def setup_fog():
     """ Configure the OpenGL fog properties.
 
     """
-    
+    # Required addition for glCheckError function within OpenGL
+    glBegin(GL_POINTS) 
+
     # Enable fog. Fog "blends a fog color with each rasterized pixel fragment's
     # post-texturing color."
     glEnable(GL_FOG)
