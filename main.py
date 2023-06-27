@@ -851,7 +851,16 @@ class Window(pyglet.window.Window):
         glColor3d(0, 0, 0)
         self.reticle.draw(GL_LINES)
 
+def test_fog():
+    ''' Test driven development for making sure setup_fog() is able to run
 
+    '''
+    try:
+        setup_fog()
+        assert True
+    except:
+        assert False
+        
 def setup_fog():
     """ Configure the OpenGL fog properties.
 
