@@ -39,7 +39,7 @@ The API could contain functionality for the following:
 
 ```shell
 pip install pyglet
-pip install pyopengl
+pip install pyopengl        ## Will need update to python 3.11 (confirmed working)
 git clone https://github.com/fogleman/Minecraft.git
 cd Minecraft
 python main.py
