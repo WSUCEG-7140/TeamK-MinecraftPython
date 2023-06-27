@@ -852,6 +852,14 @@ class Window(pyglet.window.Window):
         self.reticle.draw(GL_LINES)
 
 
+def test_fog():
+    try:
+        setup_fog()
+        assert True
+    except:
+        assert False
+
+
 def setup_fog():
     """ Configure the OpenGL fog properties.
 
