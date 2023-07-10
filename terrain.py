@@ -76,8 +76,4 @@ class TestTerrain(unittest.TestCase):
                     self.assertEqual(self.terrain[x][y][z], "blue")
 
 
-if _name_ == '_main_':
-    unittest.main()
-
-
     
