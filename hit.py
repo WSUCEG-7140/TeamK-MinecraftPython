@@ -71,6 +71,10 @@ class Hit_ray:
 		# y: (y - ly) / vy = (0.5 - lx) / vx IFF y = (0.5 - lx) / vx * vy + ly
 		# z: (z - lz) / vz = (0.5 - lx) / vx IFF z = (0.5 - lx) / vx * vz + lz
 
+
+		 # calculate intersections
+
+                 # Intersection with +x face (fx)
 		if vx:
 			x = 0.5
 			y = (0.5 - lx) / vx * vy + ly
@@ -84,6 +88,7 @@ class Hit_ray:
 
 				return self.check(hit_callback, distance, (bx, by, bz), (bx + sign[0], by, bz))
 
+		 # Intersection with +y face (fy)
 		if vy:
 			x = (0.5 - ly) / vy * vx + lx
 			y = 0.5
@@ -93,6 +98,7 @@ class Hit_ray:
 				distance = math.sqrt((x - lx) ** 2 + (y - ly) ** 2 + (z - lz) ** 2)
 				return self.check(hit_callback, distance, (bx, by, bz), (bx, by + sign[1], bz))
 		
+		 # Intersection with +z face (fz)
 		if vz:
 			x = (0.5 - lz) / vz * vx + lx
 			y = (0.5 - lz) / vz * vy + ly
