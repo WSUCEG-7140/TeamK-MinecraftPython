@@ -54,6 +54,14 @@ def print_terrain(terrain):
             print()
         print()
 
+'''Testing if any errors in funtion print_terrain, allows for full automated testing and code coverage'''
+def test_print():
+    try:
+        print_terrain(terrain)
+        assert(True)
+    except:
+        assert(False)
+
 class TestTerrain(unittest.TestCase):
      # Define the dimensions of the terrain for unit testing
     def setUp(self):
@@ -74,10 +82,3 @@ class TestTerrain(unittest.TestCase):
             for y in range(0, 3):
                 for z in range(2, 5):
                     self.assertEqual(self.terrain[x][y][z], "blue")
-
-
-if _name_ == '_main_':
-    unittest.main()
-
-
-    
