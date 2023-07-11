@@ -2,7 +2,7 @@ import pyglet.window
 import controller
 import math
 
-class Keyboard_Mouse(controller):
+class Keyboard_Mouse():
     """
     A class that handles keyboard and mouse events for the game.
     """
