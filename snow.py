@@ -76,3 +76,79 @@ player.add_item_to_inventory(snow_block)
 # Render the player's inventory
 inventory_renderer = InventoryRenderer()
 inventory_renderer.render(player)
+
+#test cases:
+import unittest
+
+class Player:
+    def __init__(self):
+        self.inventory = []
+
+    def add_item_to_inventory(self, item):
+        self.inventory.append(item)
+
+    def equip_tool(self, tool):
+        self.equipped_tool = tool
+
+class Inventory:
+    def __init__(self):
+        self.items = []
+
+    def add_item(self, item):
+        self.items.append(item)
+
+class SnowBlock:
+    def __init__(self):
+        self.is_broken = False
+        self.slipperiness = 0.6
+
+    def on_player_interact(self, player):
+        if hasattr(player, "equipped_tool") and player.equipped_tool == "shovel":
+            self.is_broken = True
+
+class InventoryRenderer:
+    def render(self, inventory):
+        rendered_inventory = ""
+        for item in inventory.items:
+            rendered_inventory += item + "\n"
+        return rendered_inventory
+
+class Shovel:
+    pass
+
+class SnowBlockTestCase(unittest.TestCase):
+    def test_add_snow_block_to_inventory(self):
+        player = Player()
+        snow_block = SnowBlock()
+        player.add_item_to_inventory(snow_block)
+        self.assertIn(snow_block, player.inventory)
+
+    def test_render_snow_block_in_inventory(self):
+        player = Player()
+        inventory = Inventory()
+        snow_block = SnowBlock()
+        inventory.add_item("White Block (Snow)")
+        inventory_renderer = InventoryRenderer()
+        rendered_inventory = inventory_renderer.render(inventory)
+        self.assertIsNotNone(rendered_inventory)
+        self.assertIn("White Block (Snow)", rendered_inventory)
+        
+    def test_slipperiness_of_snow_block(self):
+        snow_block = SnowBlock()
+        self.assertAlmostEqual(snow_block.slipperiness, 0.6, delta=0.001)
+
+    def test_snow_block_not_broken_without_shovel(self):
+        player = Player()
+        snow_block = SnowBlock()
+        snow_block.on_player_interact(player)
+        self.assertFalse(snow_block.is_broken)
+
+    def test_equip_tool(self):
+        player = Player()
+        shovel = Shovel()
+        player.equip_tool(shovel)
+        self.assertEqual(player.equipped_tool, shovel)
+
+
+if __name__ == '__main__':
+    unittest.main()
