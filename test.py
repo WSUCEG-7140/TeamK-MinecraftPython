@@ -8,7 +8,9 @@ from terrain import *
 
 import unittest
 
-''' Sample test case to ensure working PyTest'''
+''' 
+Sample test case to ensure working PyTest
+'''
 def test_pytest():
     assert True
 
@@ -17,14 +19,11 @@ def test_pytest():
 """
 Tests from terrain.py
 """
-
 def test_print():
     try:
         print_terrain(terrain)
         assert(True)
-    except:
-        assert(False)
-
+    except: assert(False)
 class TestTerrain(unittest.TestCase):
      # Define the dimensions of the terrain for unit testing
     def setUp(self):
@@ -54,8 +53,7 @@ def test_fog():
     try:
         setup_fog()
         assert True
-    except:
-        assert False
+    except: assert False
 
 """
 Errors found in Tests from pygletbatchupdater.py
@@ -112,7 +110,3 @@ class SnowBlockTestCase(unittest.TestCase):
         shovel = Shovel()
         player.equip_tool(shovel)
         self.assertEqual(player.equipped_tool, shovel)  # Check if the player's equipped tool is the shovel
-
-
-if __name__ == '__main__':
-    unittest.main()

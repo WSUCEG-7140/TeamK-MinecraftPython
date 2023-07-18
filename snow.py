@@ -148,7 +148,3 @@ class SnowBlockTestCase(unittest.TestCase):
         shovel = Shovel()
         player.equip_tool(shovel)
         self.assertEqual(player.equipped_tool, shovel)  # Check if the player's equipped tool is the shovel
-
-
-if __name__ == '__main__':
-    unittest.main()
