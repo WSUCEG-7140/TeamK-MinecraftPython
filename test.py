@@ -1,10 +1,9 @@
 from main import *
 from snow import *
 from terrain import *
-# from pygletbatchupdater import *
 from hit import *
 # from keyboard_mouse import *
-
+# from pygletbatchupdater import *
 
 import unittest
 
@@ -55,14 +54,9 @@ def test_fog():
         assert True
     except: assert False
 
-"""
-Errors found in Tests from pygletbatchupdater.py
-"""
-
-
 
 """
-Errors found in Tests from hit.py
+Tests from hit.py
 """
 def test_hit_ray():
     # Create a mock world for testing purposes
@@ -138,17 +132,6 @@ def test_hit_ray():
 
     print("All test cases passed!")
 
-
-
-
-
-"""
-Errors found in Tests from keyboard_mouse.py
-"""
-
-
-
-
 """
 Tests from snow.py
 """
@@ -184,3 +167,11 @@ class SnowBlockTestCase(unittest.TestCase):
         shovel = Shovel()
         player.equip_tool(shovel)
         self.assertEqual(player.equipped_tool, shovel)  # Check if the player's equipped tool is the shovel
+
+"""
+Errors found in Tests from keyboard_mouse.py
+"""
+
+"""
+Errors found in Tests from pygletbatchupdater.py. Need to have ShaderProgram working before testing
+"""
