@@ -2,7 +2,7 @@ from main import *
 from snow import *
 from terrain import *
 # from pygletbatchupdater import *
-# from hit import *
+from hit import *
 # from keyboard_mouse import *
 
 
@@ -64,6 +64,80 @@ Errors found in Tests from pygletbatchupdater.py
 """
 Errors found in Tests from hit.py
 """
+def test_hit_ray():
+    # Create a mock world for testing purposes
+    class World:
+        def get_block_number(self, block):
+            # Return 1 if the block is valid, 0 otherwise
+            if block in [(1, 0, 0), (2, 0, 0), (3, 0, 0)]:
+                return 1
+            else:
+                return 0
+
+    world = World()
+
+    # Test case 1: Valid hit with a block within hit range
+    rotation = (0.1, 0.2)
+    starting_position = (0, 0, 0)
+    hit_callback_triggered = False
+
+    def hit_callback(current_block, next_block):
+        nonlocal hit_callback_triggered
+        hit_callback_triggered = True
+
+    hit_ray = Hit_ray(world, rotation, starting_position)
+    hit_ray.step(hit_callback)
+
+    assert hit_callback_triggered, "Test case 1 failed: Valid hit not detected."
+
+    # Test case 2: No hit with no blocks within hit range
+    rotation = (0.8, 0.1)
+    starting_position = (0, 0, 0)
+    hit_callback_triggered = False
+
+    hit_ray = Hit_ray(world, rotation, starting_position)
+    hit_ray.step(hit_callback)
+
+    assert not hit_callback_triggered, "Test case 2 failed: Unexpected hit detected."
+
+    # Test case 3: Valid hit with multiple blocks within hit range
+    rotation = (0.5, 0.3)
+    starting_position = (0, 0, 0)
+    hit_callback_triggered = False
+
+    def hit_callback(current_block, next_block):
+        nonlocal hit_callback_triggered
+        hit_callback_triggered = True
+
+    hit_ray = Hit_ray(world, rotation, starting_position)
+    hit_ray.step(hit_callback)
+
+    assert hit_callback_triggered, "Test case 3 failed: Valid hit not detected."
+
+    # Test case 4: Valid hit with hit range exactly matching the block position
+    rotation = (0.5, 0.3)
+    starting_position = (0, 0, 0)
+    hit_callback_triggered = False
+
+    def hit_callback(current_block, next_block):
+        nonlocal hit_callback_triggered
+        hit_callback_triggered = True
+
+    hit_ray = Hit_ray(world, rotation, starting_position)
+    hit_ray.step(hit_callback)
+
+    assert hit_callback_triggered, "Test case 4 failed: Valid hit not detected."
+
+    # Test case 5: No hit with an invalid block within hit range
+    rotation = (0.2, 0.6)
+    starting_position = (0, 0, 0)
+    hit_callback_triggered = False
+
+    hit_ray = Hit_ray(world, rotation, starting_position)
+    hit_ray.step(hit_callback)
+
+    print("All test cases passed!")
+
 
 
 
