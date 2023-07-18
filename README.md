@@ -40,6 +40,7 @@ The API could contain functionality for the following:
 ```shell
 pip install pyglet
 pip install pyopengl # Confirmed works with Python 3.11
+pip install controller # Needed for keyboard_mouse.py
 git clone https://github.com/fogleman/Minecraft.git
 cd Minecraft
 python main.py
