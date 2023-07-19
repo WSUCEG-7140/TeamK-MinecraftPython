@@ -1,6 +1,6 @@
 class Block:
     def __init__(self):
-        self.is_melted = False
+        self.is_melted = False  # Indicates whether the block is melted or not
 
     def on_collision(self, other):
         pass  # Placeholder method for handling collisions
@@ -9,7 +9,7 @@ class Block:
 class SnowBlock(Block):
     def on_collision(self, other):
         if isinstance(other, Lava):
-            self.is_melted = True
+            self.is_melted = True  # Snow block is melted if it collides with lava
 
 
 class Lava(Block):
