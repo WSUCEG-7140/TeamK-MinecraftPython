@@ -367,8 +367,26 @@ if __name__ == '__main__':
     unittest.main()
 
 """
-Errors found in Tests from keyboard_mouse.py
+Tests from keyboard_mouse.py
 """
+class KeyboardMouseTestCase(unittest.TestCase):
+    def setUp(self):
+        self.game = MagicMock()
+        self.keyboard_mouse = Keyboard_Mouse(self.game)
+
+
+    def test_mouse_motion(self):
+        self.game.mouse_captured = True
+        sensitivity = 0.004
+
+        self.game.player.rotation = [0, 0]
+
+        self.keyboard_mouse.on_mouse_motion(0, 0, 10, 20)
+        self.assertEqual(self.game.player.rotation, [10 * sensitivity, 20 * sensitivity])
+
+if __name__ == '__main__':
+    unittest.main()
+
 
 """
 Errors found in Tests from pygletbatchupdater.py. Need to have ShaderProgram working before testing
