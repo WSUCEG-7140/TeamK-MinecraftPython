@@ -3,11 +3,25 @@ class Block:
         self.is_melted = False  # Indicates whether the block is melted or not
 
     def on_collision(self, other):
-        pass  # Placeholder method for handling collisions
+        """
+        Placeholder method for handling collisions.
+
+        Parameters:
+            other (Block): The other block involved in the collision.
+        """
+        pass
 
 
 class SnowBlock(Block):
     def on_collision(self, other):
+        """
+        Handle collisions with other blocks.
+
+        If the SnowBlock collides with Lava, it will be melted.
+
+        Parameters:
+            other (Block): The other block involved in the collision.
+        """
         if isinstance(other, Lava):
             self.is_melted = True  # Snow block is melted if it collides with lava
 
