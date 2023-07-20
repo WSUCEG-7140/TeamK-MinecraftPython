@@ -5,8 +5,14 @@ import time  # Import the time module for time-related operations
 
 class Joystick():
     def __init__(self, game):
-        super().__init__(game)  # Call the superclass's __init__() method
-        self.init_joysticks(pyglet.input.get_joysticks())  # Initialize the joysticks
+        """
+        Constructor for the Joystick class.
+
+        Parameters:
+            game (Game): An instance of the Game class representing the game environment.
+        """
+        self.game = game
+        self.init_joysticks(pyglet.input.get_joysticks())
 
         self.camera_sensitivity = 0.007  # Set the camera sensitivity for joystick movement
         self.joystick_deadzone = 0.25  # Set the deadzone for joystick input
@@ -21,6 +27,9 @@ class Joystick():
         self.joystick_updater.start()  # Start the joystick updater thread
 
     def updater(self):
+        """
+        Thread function that continuously checks for changes in connected joysticks and reinitializes them if needed.
+        """
         while True:
             if len(pyglet.input.get_joysticks()) != len(self.joysticks):  # Check if the number of connected joysticks has changed
                 self.init_joysticks(pyglet.input.get_joysticks())  # Reinitialize the joysticks
@@ -28,6 +37,12 @@ class Joystick():
             time.sleep(2)  # Sleep for 2 seconds before checking again
 
     def init_joysticks(self, joysticks):
+        """
+        Initialize the joysticks and assign event handlers for button presses, releases, axis motions, and hat motions.
+
+        Parameters:
+            joysticks (list): A list of pyglet.input.Joystick objects representing the connected joysticks.
+        """
         self.joysticks = joysticks  # Set the joysticks to the given list of joysticks
 
         for joystick in self.joysticks:
@@ -38,6 +53,9 @@ class Joystick():
             joystick.open(exclusive=True)  # Open the joystick in exclusive mode
 
     def update_controller(self):
+        """
+        Update the controller based on the joystick input, adjusting player rotation and movement speed.
+        """
         if not self.game.mouse_captured or not self.joysticks:  # Check if the mouse is not captured or no joysticks are connected
             return  # Return without updating the controller
 
@@ -53,6 +71,13 @@ class Joystick():
             self.last_update = time.process_time()  # Update the last update time
 
     def on_joybutton_press(self, joystick, button):
+        """
+        Event handler for joystick button press events.
+
+        Parameters:
+            joystick (pyglet.input.Joystick): The joystick that triggered the event.
+            button (int): The index of the button that was pressed.
+        """
         if "xbox" in joystick.device.name.lower():  # Check if the joystick is an Xbox controller
             if button == 1: self.misc(self.MiscMode.RANDOM)  # Call the misc method with the corresponding misc mode
             elif button == 2: self.interact(self.InteractMode.PICK)  # Call the interact method with the corresponding interaction mode
@@ -78,6 +103,13 @@ class Joystick():
                 elif self.game.player.target_speed == player.WALKING_SPEED: self.start_modifier(self.ModifierMode.SPRINT)  # Call the start_modifier method with the corresponding modifier mode
 
     def on_joybutton_release(self, joystick, button):
+        """
+        Event handler for joystick button release events.
+
+        Parameters:
+            joystick (pyglet.input.Joystick): The joystick that triggered the event.
+            button (int): The index of the button that was released.
+        """
         if "xbox" in joystick.device.name.lower():  # Check if the joystick is an Xbox controller
             if button == 0: self.end_move(self.MoveMode.UP)  # Call the end_move method with the corresponding move mode
             elif button == 9: self.end_move(self.MoveMode.DOWN)  # Call the end_move method with the corresponding move mode
@@ -87,6 +119,14 @@ class Joystick():
             elif button == 11: self.end_move(self.MoveMode.DOWN)  # Call the end_move method with the corresponding move mode
 
     def on_joyaxis_motion(self, joystick, axis, value):
+        """
+        Event handler for joystick axis motion events.
+
+        Parameters:
+            joystick (pyglet.input.Joystick): The joystick that triggered the event.
+            axis (str): The name of the axis that changed its value (e.g., "x", "y", "z", "rx", "ry", "rz").
+            value (float): The current value of the axis motion.
+        """
         if abs(value) < self.joystick_deadzone:  # Check if the joystick value is within the deadzone
             value = 0  # Set the joystick value to zero
 
@@ -135,4 +175,12 @@ class Joystick():
             print(axis)  # Print the axis value
 
     def on_joyhat_motion(self, joystick, hat_x, hat_y):
+        """
+        Event handler for joystick hat motion events.
+
+        Parameters:
+            joystick (pyglet.input.Joystick): The joystick that triggered the event.
+            hat_x (int): The x-coordinate of the hat motion (-1, 0, or 1).
+            hat_y (int): The y-coordinate of the hat motion (-1, 0, or 1).
+        """
         pass  # Do nothing for joystick hat motion
