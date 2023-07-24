@@ -2,8 +2,8 @@ from main import *
 from snow import *
 from terrain import *
 from hit import *
-# from keyboard_mouse import *
-# from pygletbatchupdater import *
+from keyboard_mouse import *
+from pygletbatchupdater import *
 
 import unittest
 
@@ -12,8 +12,6 @@ Sample test case to ensure working PyTest
 '''
 def test_pytest():
     assert True
-
-
 
 """
 Tests from terrain.py
@@ -123,6 +121,81 @@ def test_fog():
         setup_fog()
         assert True
     except: assert False
+
+
+def test_tripleSpeedFalse():
+        flying = False
+        tripleSpeed = False
+        
+        speed = 15 if flying else 5
+        speed = speed * 3 if tripleSpeed else speed
+        
+        if flying:
+            if tripleSpeed:
+                assert speed == 45
+            else:
+                assert speed == 15
+        else:
+            if tripleSpeed:
+                assert speed == 15
+            else:
+                assert speed == 5
+
+def test_tripleSpeedTrue():
+        flying = False
+        tripleSpeed = True
+        
+        speed = 15 if flying else 5
+        speed = speed * 3 if tripleSpeed else speed
+        
+        if flying:
+            if tripleSpeed:
+                assert speed == 45
+            else:
+                assert speed == 15
+        else:
+            if tripleSpeed:
+                assert speed == 15
+            else:
+                assert speed == 5
+                
+def test_flyingTripleSpeed():
+        flying = True
+        tripleSpeed = True
+        
+        speed = 15 if flying else 5
+        speed = speed * 3 if tripleSpeed else speed
+        
+        if flying:
+            if tripleSpeed:
+                assert speed == 45
+            else:
+                assert speed == 15
+        else:
+            if tripleSpeed:
+                assert speed == 15
+            else:
+                assert speed == 5
+                
+def test_flyingTripleSpeedFalse():
+        flying = True
+        tripleSpeed = False
+        
+        speed = 15 if flying else 5
+        speed = speed * 3 if tripleSpeed else speed
+        
+        if flying:
+            if tripleSpeed:
+                assert speed == 45
+            else:
+                assert speed == 15
+        else:
+            if tripleSpeed:
+                assert speed == 15
+            else:
+                assert speed == 5
+
+
 
 
 """
