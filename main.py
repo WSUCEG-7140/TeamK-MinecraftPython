@@ -445,6 +445,8 @@ class Window(pyglet.window.Window):
 
         # When flying gravity has no effect and speed is increased.
         self.flying = False
+
+        # When true, character goes 3x faster when flying and walking.
         self.tripleSpeed = False
     
 
@@ -585,11 +587,7 @@ class Window(pyglet.window.Window):
         dt = min(dt, 0.2)
         for _ in xrange(m):
             self._update(dt / m)
-
-    def _update_test (self, dt):
-        if self.flying:
-            assert speed == 15
-            
+          
     def _update(self, dt):
         """ Private implementation of the `update()` method. This is where most
         of the motion logic lives, along with gravity and collision detection.
@@ -602,22 +600,9 @@ class Window(pyglet.window.Window):
         """
         # walking
         speed = FLYING_SPEED if self.flying else WALKING_SPEED
-        
-        speed = speed * 3 if self.tripleSpeed else speed
 
-        if self.flying:
-            if self.tripleSpeed:
-                assert speed == 45
-            else:
-                assert speed == 15
-        else:
-            if self.tripleSpeed:
-                assert speed == 15
-            else:
-                assert speed == 5
-    
-
-
+        # Reads from key_on_pressed and key_on_release key.LCTRL
+        speed = speed * 3 if self.tripleSpeed else speed   
 
         d = dt * speed # distance covered this tick.
         dx, dy, dz = self.get_motion_vector()
