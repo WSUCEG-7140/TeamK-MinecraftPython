@@ -61,7 +61,16 @@ class SnowBlock(Block):
         # Logic to break the snow block and remove it from the game world
         # ...
         pass
-
+    
+    def on_collision(self, other):
+        """
+        Handle collisions with other blocks.
+        If the SnowBlock collides with Lava, it will be melted.
+        Parameters:
+            other (Block): The other block involved in the collision.
+        """
+        if isinstance(other, self):
+            self.is_melted = True  # Snow block is melted if it collides with lava
 
 ## @class Player
 #  @brief Represents a player in the game.
