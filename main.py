@@ -21,6 +21,9 @@ import clouds
 
 import sun
 
+import sun
+import moon
+
 TICKS_PER_SEC = 60
 
 # Size of sectors used to ease block loading.
