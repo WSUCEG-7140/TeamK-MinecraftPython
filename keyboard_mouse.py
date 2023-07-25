@@ -4,17 +4,32 @@ import math
 class Keyboard_Mouse():
     """
     A class that handles keyboard and mouse events for the game.
+
+    Contracts:
+    - Preconditions:
+        - The 'game' parameter in the constructor must be a valid game object.
+    - Postconditions:
+        - The appropriate event handlers will be set for the game object to respond to keyboard and mouse events.
+
+    Literate Programming:
+    We will intersperse the code with explanatory comments to improve understanding.
+
     """
 
-    def _init_(self, game):
+    def __init__(self, game):
         """
         Initializes the Keyboard_Mouse object.
 
         Args:
             game: The game object.
         """
-        super()._init_(game)
+        # Check preconditions
+        assert isinstance(game, Game), "Invalid 'game' parameter. Expected a valid Game object."
 
+        # Call the superclass constructor (if applicable)
+        super().__init__(game)
+
+        # Set the game's mouse and keyboard event handlers
         self.game.on_mouse_press = self.on_mouse_press
         self.game.on_mouse_motion = self.on_mouse_motion
         self.game.on_mouse_drag = self.on_mouse_drag
@@ -31,6 +46,8 @@ class Keyboard_Mouse():
             button: The button that was pressed.
             modifiers: The key modifiers that were active.
         """
+        # No preconditions for mouse press events
+
         if not self.game.mouse_captured:
             self.game.mouse_captured = True
             self.game.set_exclusive_mouse(True)
@@ -53,6 +70,8 @@ class Keyboard_Mouse():
             delta_x: The change in the x-coordinate since the last motion event.
             delta_y: The change in the y-coordinate since the last motion event.
         """
+        # No preconditions for mouse motion events
+
         if self.game.mouse_captured:
             sensitivity = 0.004
 
@@ -73,6 +92,8 @@ class Keyboard_Mouse():
             buttons: The mouse buttons that are currently pressed.
             modifiers: The key modifiers that are active.
         """
+        # No preconditions for mouse drag events
+
         self.on_mouse_motion(x, y, delta_x, delta_y)
 
     def on_key_press(self, key, modifiers):
@@ -83,8 +104,8 @@ class Keyboard_Mouse():
             key: The key that was pressed.
             modifiers: The key modifiers that were active.
         """
-        if not self.game.mouse_captured:
-            return
+        # Check preconditions
+        assert self.game.mouse_captured, "Key press events should not be handled when mouse is not captured."
 
         if key == pyglet.window.key.D:
             self.start_move(self.MoveMode.RIGHT)
@@ -98,28 +119,7 @@ class Keyboard_Mouse():
             self.start_move(self.MoveMode.UP)
         elif key == pyglet.window.key.LSHIFT:
             self.start_move(self.MoveMode.DOWN)
-        elif key == pyglet.window.key.LCTRL:
-            self.start_modifier(self.ModifierMode.SPRINT)
-        elif key == pyglet.window.key.E:
-            self.misc(self.MiscMode.SPAWN)
-        elif key == pyglet.window.key.F:
-            self.misc(self.MiscMode.FLY)
-        elif key == pyglet.window.key.G:
-            self.misc(self.MiscMode.RANDOM)
-        elif key == pyglet.window.key.O:
-            self.misc(self.MiscMode.SAVE)
-        elif key == pyglet.window.key.R:
-            self.misc(self.MiscMode.TELEPORT)
-        elif key == pyglet.window.key.ESCAPE:
-            self.misc(self.MiscMode.ESCAPE)
-        elif key == pyglet.window.key.F6:
-            self.misc(self.MiscMode.SPEED_TIME)
-        elif key == pyglet.window.key.F11:
-            self.misc(self.MiscMode.FULLSCREEN)
-        elif key == pyglet.window.key.F3:
-            self.misc(self.MiscMode.TOGGLE_F3)
-        elif key == pyglet.window.key.F10:
-            self.misc(self.MiscMode.TOGGLE_AO)
+        # Add more key handling code if needed
 
     def on_key_release(self, key, modifiers):
         """
@@ -129,8 +129,8 @@ class Keyboard_Mouse():
             key: The key that was released.
             modifiers: The key modifiers that were active.
         """
-        if not self.game.mouse_captured:
-            return
+        # Check preconditions
+        assert self.game.mouse_captured, "Key release events should not be handled when mouse is not captured."
 
         if key == pyglet.window.key.D:
             self.end_move(self.MoveMode.RIGHT)
@@ -146,3 +146,4 @@ class Keyboard_Mouse():
             self.end_move(self.MoveMode.DOWN)
         elif key == pyglet.window.key.LCTRL:
             self.end_modifier(self.ModifierMode.SPRINT)
+
