@@ -1,0 +1,112 @@
+\doxysection{keyboard\+\_\+mouse.\+Keyboard\+\_\+\+Mouse Class Reference}
+\hypertarget{classkeyboard__mouse_1_1_keyboard___mouse}{}\label{classkeyboard__mouse_1_1_keyboard___mouse}\index{keyboard\_mouse.Keyboard\_Mouse@{keyboard\_mouse.Keyboard\_Mouse}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classkeyboard__mouse_1_1_keyboard___mouse_a86a3c5a032fbaf00025c335cd8bb7cf0}{on\+\_\+mouse\+\_\+press}} (self, x, y, button, modifiers)
+\item 
+\mbox{\hyperlink{classkeyboard__mouse_1_1_keyboard___mouse_a48af42ded09e81caeb3304778ab50856}{on\+\_\+mouse\+\_\+motion}} (self, x, y, delta\+\_\+x, delta\+\_\+y)
+\item 
+\mbox{\hyperlink{classkeyboard__mouse_1_1_keyboard___mouse_a2b45aff3e30e7da5ba794e3fb10b5cee}{on\+\_\+mouse\+\_\+drag}} (self, x, y, delta\+\_\+x, delta\+\_\+y, buttons, modifiers)
+\item 
+\mbox{\hyperlink{classkeyboard__mouse_1_1_keyboard___mouse_a984baf8ca8630b0056f408dfd6761047}{on\+\_\+key\+\_\+press}} (self, key, modifiers)
+\item 
+\mbox{\hyperlink{classkeyboard__mouse_1_1_keyboard___mouse_a77fdbf89a897aa2f6dad9bc6407e3420}{on\+\_\+key\+\_\+release}} (self, key, modifiers)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classkeyboard__mouse_1_1_keyboard___mouse_a999814d32a5e3e7cd808debcf997d3f5}{\+\_\+init\+\_\+}} (self, game)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A class that handles keyboard and mouse events for the game.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classkeyboard__mouse_1_1_keyboard___mouse_a999814d32a5e3e7cd808debcf997d3f5}\label{classkeyboard__mouse_1_1_keyboard___mouse_a999814d32a5e3e7cd808debcf997d3f5} 
+\index{keyboard\_mouse.Keyboard\_Mouse@{keyboard\_mouse.Keyboard\_Mouse}!\_init\_@{\_init\_}}
+\index{\_init\_@{\_init\_}!keyboard\_mouse.Keyboard\_Mouse@{keyboard\_mouse.Keyboard\_Mouse}}
+\doxysubsubsection{\texorpdfstring{\_init\_()}{\_init\_()}}
+{\footnotesize\ttfamily keyboard\+\_\+mouse.\+Keyboard\+\_\+\+Mouse.\+\_\+init\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{game }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Initializes the Keyboard_Mouse object.
+
+Args:
+    game: The game object.
+\end{DoxyVerb}
+ \Hypertarget{classkeyboard__mouse_1_1_keyboard___mouse_a984baf8ca8630b0056f408dfd6761047}\label{classkeyboard__mouse_1_1_keyboard___mouse_a984baf8ca8630b0056f408dfd6761047} 
+\index{keyboard\_mouse.Keyboard\_Mouse@{keyboard\_mouse.Keyboard\_Mouse}!on\_key\_press@{on\_key\_press}}
+\index{on\_key\_press@{on\_key\_press}!keyboard\_mouse.Keyboard\_Mouse@{keyboard\_mouse.Keyboard\_Mouse}}
+\doxysubsubsection{\texorpdfstring{on\_key\_press()}{on\_key\_press()}}
+{\footnotesize\ttfamily keyboard\+\_\+mouse.\+Keyboard\+\_\+\+Mouse.\+on\+\_\+key\+\_\+press (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key,  }\item[{}]{modifiers }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Handles key press events.
+
+Args:
+    key: The key that was pressed.
+    modifiers: The key modifiers that were active.
+\end{DoxyVerb}
+ \Hypertarget{classkeyboard__mouse_1_1_keyboard___mouse_a77fdbf89a897aa2f6dad9bc6407e3420}\label{classkeyboard__mouse_1_1_keyboard___mouse_a77fdbf89a897aa2f6dad9bc6407e3420} 
+\index{keyboard\_mouse.Keyboard\_Mouse@{keyboard\_mouse.Keyboard\_Mouse}!on\_key\_release@{on\_key\_release}}
+\index{on\_key\_release@{on\_key\_release}!keyboard\_mouse.Keyboard\_Mouse@{keyboard\_mouse.Keyboard\_Mouse}}
+\doxysubsubsection{\texorpdfstring{on\_key\_release()}{on\_key\_release()}}
+{\footnotesize\ttfamily keyboard\+\_\+mouse.\+Keyboard\+\_\+\+Mouse.\+on\+\_\+key\+\_\+release (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key,  }\item[{}]{modifiers }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Handles key release events.
+
+Args:
+    key: The key that was released.
+    modifiers: The key modifiers that were active.
+\end{DoxyVerb}
+ \Hypertarget{classkeyboard__mouse_1_1_keyboard___mouse_a2b45aff3e30e7da5ba794e3fb10b5cee}\label{classkeyboard__mouse_1_1_keyboard___mouse_a2b45aff3e30e7da5ba794e3fb10b5cee} 
+\index{keyboard\_mouse.Keyboard\_Mouse@{keyboard\_mouse.Keyboard\_Mouse}!on\_mouse\_drag@{on\_mouse\_drag}}
+\index{on\_mouse\_drag@{on\_mouse\_drag}!keyboard\_mouse.Keyboard\_Mouse@{keyboard\_mouse.Keyboard\_Mouse}}
+\doxysubsubsection{\texorpdfstring{on\_mouse\_drag()}{on\_mouse\_drag()}}
+{\footnotesize\ttfamily keyboard\+\_\+mouse.\+Keyboard\+\_\+\+Mouse.\+on\+\_\+mouse\+\_\+drag (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{delta\+\_\+x,  }\item[{}]{delta\+\_\+y,  }\item[{}]{buttons,  }\item[{}]{modifiers }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Handles mouse drag events.
+
+Args:
+    x: The x-coordinate of the mouse position.
+    y: The y-coordinate of the mouse position.
+    delta_x: The change in the x-coordinate since the last drag event.
+    delta_y: The change in the y-coordinate since the last drag event.
+    buttons: The mouse buttons that are currently pressed.
+    modifiers: The key modifiers that are active.
+\end{DoxyVerb}
+ \Hypertarget{classkeyboard__mouse_1_1_keyboard___mouse_a48af42ded09e81caeb3304778ab50856}\label{classkeyboard__mouse_1_1_keyboard___mouse_a48af42ded09e81caeb3304778ab50856} 
+\index{keyboard\_mouse.Keyboard\_Mouse@{keyboard\_mouse.Keyboard\_Mouse}!on\_mouse\_motion@{on\_mouse\_motion}}
+\index{on\_mouse\_motion@{on\_mouse\_motion}!keyboard\_mouse.Keyboard\_Mouse@{keyboard\_mouse.Keyboard\_Mouse}}
+\doxysubsubsection{\texorpdfstring{on\_mouse\_motion()}{on\_mouse\_motion()}}
+{\footnotesize\ttfamily keyboard\+\_\+mouse.\+Keyboard\+\_\+\+Mouse.\+on\+\_\+mouse\+\_\+motion (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{delta\+\_\+x,  }\item[{}]{delta\+\_\+y }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Handles mouse motion events.
+
+Args:
+    x: The x-coordinate of the mouse position.
+    y: The y-coordinate of the mouse position.
+    delta_x: The change in the x-coordinate since the last motion event.
+    delta_y: The change in the y-coordinate since the last motion event.
+\end{DoxyVerb}
+ \Hypertarget{classkeyboard__mouse_1_1_keyboard___mouse_a86a3c5a032fbaf00025c335cd8bb7cf0}\label{classkeyboard__mouse_1_1_keyboard___mouse_a86a3c5a032fbaf00025c335cd8bb7cf0} 
+\index{keyboard\_mouse.Keyboard\_Mouse@{keyboard\_mouse.Keyboard\_Mouse}!on\_mouse\_press@{on\_mouse\_press}}
+\index{on\_mouse\_press@{on\_mouse\_press}!keyboard\_mouse.Keyboard\_Mouse@{keyboard\_mouse.Keyboard\_Mouse}}
+\doxysubsubsection{\texorpdfstring{on\_mouse\_press()}{on\_mouse\_press()}}
+{\footnotesize\ttfamily keyboard\+\_\+mouse.\+Keyboard\+\_\+\+Mouse.\+on\+\_\+mouse\+\_\+press (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{button,  }\item[{}]{modifiers }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Handles mouse press events.
+
+Args:
+    x: The x-coordinate of the mouse position.
+    y: The y-coordinate of the mouse position.
+    button: The button that was pressed.
+    modifiers: The key modifiers that were active.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/joeyb/\+Team\+K-\/\+Minecraft\+Python/keyboard\+\_\+mouse.\+py\end{DoxyCompactItemize}

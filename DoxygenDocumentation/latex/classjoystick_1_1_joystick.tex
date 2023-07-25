@@ -1,0 +1,153 @@
+\doxysection{joystick.\+Joystick Class Reference}
+\hypertarget{classjoystick_1_1_joystick}{}\label{classjoystick_1_1_joystick}\index{joystick.Joystick@{joystick.Joystick}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classjoystick_1_1_joystick_a964f89ff9a61af636b9bc57b4de00591}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, game)
+\item 
+\mbox{\hyperlink{classjoystick_1_1_joystick_ab2c042630425986a4cb59de8894c3606}{updater}} (self)
+\item 
+\mbox{\hyperlink{classjoystick_1_1_joystick_ac3879d769237a6c23eabbda9d0203e1e}{init\+\_\+joysticks}} (self, joysticks)
+\item 
+\mbox{\hyperlink{classjoystick_1_1_joystick_a514f62a4b8f418b867de70b3a22433a8}{update\+\_\+controller}} (self)
+\item 
+\mbox{\hyperlink{classjoystick_1_1_joystick_a1c26ee622c9e7cfed5d0ecdbac5fe994}{on\+\_\+joybutton\+\_\+press}} (self, joystick, button)
+\item 
+\mbox{\hyperlink{classjoystick_1_1_joystick_aa4b2abada4fbaef5cbed6bf28c780215}{on\+\_\+joybutton\+\_\+release}} (self, joystick, button)
+\item 
+\mbox{\hyperlink{classjoystick_1_1_joystick_a316dfe8c422fbebadc0b5ab737dd1f41}{on\+\_\+joyaxis\+\_\+motion}} (self, joystick, axis, value)
+\item 
+\mbox{\hyperlink{classjoystick_1_1_joystick_a4f06f16d7a3c652efb1bb344c3892322}{on\+\_\+joyhat\+\_\+motion}} (self, joystick, hat\+\_\+x, hat\+\_\+y)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classjoystick_1_1_joystick_a155e4cef91c6db5c28daf6ea27ca64fe}\label{classjoystick_1_1_joystick_a155e4cef91c6db5c28daf6ea27ca64fe} 
+{\bfseries game}
+\item 
+\Hypertarget{classjoystick_1_1_joystick_a52571d4559aa812c617e2c8865011ab2}\label{classjoystick_1_1_joystick_a52571d4559aa812c617e2c8865011ab2} 
+{\bfseries camera\+\_\+sensitivity}
+\item 
+\Hypertarget{classjoystick_1_1_joystick_a98319ed9b61f692444b2c2f2d6f9eb75}\label{classjoystick_1_1_joystick_a98319ed9b61f692444b2c2f2d6f9eb75} 
+{\bfseries joystick\+\_\+deadzone}
+\item 
+\Hypertarget{classjoystick_1_1_joystick_afa84a1a5d1dc7a19dacbd87acf420bf9}\label{classjoystick_1_1_joystick_afa84a1a5d1dc7a19dacbd87acf420bf9} 
+{\bfseries update\+\_\+delay}
+\item 
+\Hypertarget{classjoystick_1_1_joystick_aedafe04fe91700e35b929eadac4979d5}\label{classjoystick_1_1_joystick_aedafe04fe91700e35b929eadac4979d5} 
+{\bfseries last\+\_\+update}
+\item 
+\Hypertarget{classjoystick_1_1_joystick_ac0f5b9c7af53705b2c7d5c1c152bec18}\label{classjoystick_1_1_joystick_ac0f5b9c7af53705b2c7d5c1c152bec18} 
+{\bfseries joystick\+\_\+move}
+\item 
+\Hypertarget{classjoystick_1_1_joystick_a1d0483f07a4346020386ce7df25c9c8b}\label{classjoystick_1_1_joystick_a1d0483f07a4346020386ce7df25c9c8b} 
+{\bfseries joystick\+\_\+look}
+\item 
+\Hypertarget{classjoystick_1_1_joystick_a935182f2d2303b0d519a74d1d0567819}\label{classjoystick_1_1_joystick_a935182f2d2303b0d519a74d1d0567819} 
+{\bfseries joystick\+\_\+interact}
+\item 
+\Hypertarget{classjoystick_1_1_joystick_a7607cbefb286831f038529fba9c22030}\label{classjoystick_1_1_joystick_a7607cbefb286831f038529fba9c22030} 
+{\bfseries joystick\+\_\+updater}
+\item 
+\Hypertarget{classjoystick_1_1_joystick_a67f48ccf3e53114e3f86792ce06821e8}\label{classjoystick_1_1_joystick_a67f48ccf3e53114e3f86792ce06821e8} 
+{\bfseries joysticks}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classjoystick_1_1_joystick_a964f89ff9a61af636b9bc57b4de00591}\label{classjoystick_1_1_joystick_a964f89ff9a61af636b9bc57b4de00591} 
+\index{joystick.Joystick@{joystick.Joystick}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!joystick.Joystick@{joystick.Joystick}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily joystick.\+Joystick.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{game }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Constructor for the Joystick class.
+
+Parameters:
+    game (Game): An instance of the Game class representing the game environment.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classjoystick_1_1_joystick_ac3879d769237a6c23eabbda9d0203e1e}\label{classjoystick_1_1_joystick_ac3879d769237a6c23eabbda9d0203e1e} 
+\index{joystick.Joystick@{joystick.Joystick}!init\_joysticks@{init\_joysticks}}
+\index{init\_joysticks@{init\_joysticks}!joystick.Joystick@{joystick.Joystick}}
+\doxysubsubsection{\texorpdfstring{init\_joysticks()}{init\_joysticks()}}
+{\footnotesize\ttfamily joystick.\+Joystick.\+init\+\_\+joysticks (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{joysticks }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize the joysticks and assign event handlers for button presses, releases, axis motions, and hat motions.
+
+Parameters:
+    joysticks (list): A list of pyglet.input.Joystick objects representing the connected joysticks.
+\end{DoxyVerb}
+ \Hypertarget{classjoystick_1_1_joystick_a316dfe8c422fbebadc0b5ab737dd1f41}\label{classjoystick_1_1_joystick_a316dfe8c422fbebadc0b5ab737dd1f41} 
+\index{joystick.Joystick@{joystick.Joystick}!on\_joyaxis\_motion@{on\_joyaxis\_motion}}
+\index{on\_joyaxis\_motion@{on\_joyaxis\_motion}!joystick.Joystick@{joystick.Joystick}}
+\doxysubsubsection{\texorpdfstring{on\_joyaxis\_motion()}{on\_joyaxis\_motion()}}
+{\footnotesize\ttfamily joystick.\+Joystick.\+on\+\_\+joyaxis\+\_\+motion (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{joystick,  }\item[{}]{axis,  }\item[{}]{value }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Event handler for joystick axis motion events.
+
+Parameters:
+    joystick (pyglet.input.Joystick): The joystick that triggered the event.
+    axis (str): The name of the axis that changed its value (e.g., "x", "y", "z", "rx", "ry", "rz").
+    value (float): The current value of the axis motion.
+\end{DoxyVerb}
+ \Hypertarget{classjoystick_1_1_joystick_a1c26ee622c9e7cfed5d0ecdbac5fe994}\label{classjoystick_1_1_joystick_a1c26ee622c9e7cfed5d0ecdbac5fe994} 
+\index{joystick.Joystick@{joystick.Joystick}!on\_joybutton\_press@{on\_joybutton\_press}}
+\index{on\_joybutton\_press@{on\_joybutton\_press}!joystick.Joystick@{joystick.Joystick}}
+\doxysubsubsection{\texorpdfstring{on\_joybutton\_press()}{on\_joybutton\_press()}}
+{\footnotesize\ttfamily joystick.\+Joystick.\+on\+\_\+joybutton\+\_\+press (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{joystick,  }\item[{}]{button }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Event handler for joystick button press events.
+
+Parameters:
+    joystick (pyglet.input.Joystick): The joystick that triggered the event.
+    button (int): The index of the button that was pressed.
+\end{DoxyVerb}
+ \Hypertarget{classjoystick_1_1_joystick_aa4b2abada4fbaef5cbed6bf28c780215}\label{classjoystick_1_1_joystick_aa4b2abada4fbaef5cbed6bf28c780215} 
+\index{joystick.Joystick@{joystick.Joystick}!on\_joybutton\_release@{on\_joybutton\_release}}
+\index{on\_joybutton\_release@{on\_joybutton\_release}!joystick.Joystick@{joystick.Joystick}}
+\doxysubsubsection{\texorpdfstring{on\_joybutton\_release()}{on\_joybutton\_release()}}
+{\footnotesize\ttfamily joystick.\+Joystick.\+on\+\_\+joybutton\+\_\+release (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{joystick,  }\item[{}]{button }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Event handler for joystick button release events.
+
+Parameters:
+    joystick (pyglet.input.Joystick): The joystick that triggered the event.
+    button (int): The index of the button that was released.
+\end{DoxyVerb}
+ \Hypertarget{classjoystick_1_1_joystick_a4f06f16d7a3c652efb1bb344c3892322}\label{classjoystick_1_1_joystick_a4f06f16d7a3c652efb1bb344c3892322} 
+\index{joystick.Joystick@{joystick.Joystick}!on\_joyhat\_motion@{on\_joyhat\_motion}}
+\index{on\_joyhat\_motion@{on\_joyhat\_motion}!joystick.Joystick@{joystick.Joystick}}
+\doxysubsubsection{\texorpdfstring{on\_joyhat\_motion()}{on\_joyhat\_motion()}}
+{\footnotesize\ttfamily joystick.\+Joystick.\+on\+\_\+joyhat\+\_\+motion (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{joystick,  }\item[{}]{hat\+\_\+x,  }\item[{}]{hat\+\_\+y }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Event handler for joystick hat motion events.
+
+Parameters:
+    joystick (pyglet.input.Joystick): The joystick that triggered the event.
+    hat_x (int): The x-coordinate of the hat motion (-1, 0, or 1).
+    hat_y (int): The y-coordinate of the hat motion (-1, 0, or 1).
+\end{DoxyVerb}
+ \Hypertarget{classjoystick_1_1_joystick_a514f62a4b8f418b867de70b3a22433a8}\label{classjoystick_1_1_joystick_a514f62a4b8f418b867de70b3a22433a8} 
+\index{joystick.Joystick@{joystick.Joystick}!update\_controller@{update\_controller}}
+\index{update\_controller@{update\_controller}!joystick.Joystick@{joystick.Joystick}}
+\doxysubsubsection{\texorpdfstring{update\_controller()}{update\_controller()}}
+{\footnotesize\ttfamily joystick.\+Joystick.\+update\+\_\+controller (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Update the controller based on the joystick input, adjusting player rotation and movement speed.
+\end{DoxyVerb}
+ \Hypertarget{classjoystick_1_1_joystick_ab2c042630425986a4cb59de8894c3606}\label{classjoystick_1_1_joystick_ab2c042630425986a4cb59de8894c3606} 
+\index{joystick.Joystick@{joystick.Joystick}!updater@{updater}}
+\index{updater@{updater}!joystick.Joystick@{joystick.Joystick}}
+\doxysubsubsection{\texorpdfstring{updater()}{updater()}}
+{\footnotesize\ttfamily joystick.\+Joystick.\+updater (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Thread function that continuously checks for changes in connected joysticks and reinitializes them if needed.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/joeyb/\+Team\+K-\/\+Minecraft\+Python/joystick.\+py\end{DoxyCompactItemize}

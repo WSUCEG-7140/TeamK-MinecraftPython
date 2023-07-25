@@ -1,0 +1,274 @@
+\doxysection{main.\+Model Class Reference}
+\hypertarget{classmain_1_1_model}{}\label{classmain_1_1_model}\index{main.Model@{main.Model}}
+Inheritance diagram for main.\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmain_1_1_model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classmain_1_1_model_ab31c95c59b2355accd77e6312f9723a4}\label{classmain_1_1_model_ab31c95c59b2355accd77e6312f9723a4} 
+{\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+\mbox{\hyperlink{classmain_1_1_model_a1fb515c7df516d65f7170ca305fa456d}{hit\+\_\+test}} (self, position, vector, max\+\_\+distance=8)
+\item 
+\mbox{\hyperlink{classmain_1_1_model_a7dde0a23bb1925294043c80428a91fb4}{exposed}} (self, position)
+\item 
+\mbox{\hyperlink{classmain_1_1_model_a676d53fdaeafe8adf2a7114642a86bc5}{add\+\_\+block}} (self, position, texture, immediate=True)
+\item 
+\mbox{\hyperlink{classmain_1_1_model_a4c0d35e7715e0d8a08ce7a4aadd8d7db}{remove\+\_\+block}} (self, position, immediate=True)
+\item 
+\mbox{\hyperlink{classmain_1_1_model_ac51a59d9fe3f804f3f8fb24a6711254a}{check\+\_\+neighbors}} (self, position)
+\item 
+\mbox{\hyperlink{classmain_1_1_model_acc35b15eedf57a872f2146ed41c0f636}{show\+\_\+block}} (self, position, immediate=True)
+\item 
+\mbox{\hyperlink{classmain_1_1_model_ac02b839babafbb37e0d91d07f72ef9f4}{hide\+\_\+block}} (self, position, immediate=True)
+\item 
+\mbox{\hyperlink{classmain_1_1_model_aece571c3928ea7fdae70b4446d8ba525}{show\+\_\+sector}} (self, sector)
+\item 
+\mbox{\hyperlink{classmain_1_1_model_a446c4e8ef55250fe1c5e18e9cb395acb}{hide\+\_\+sector}} (self, sector)
+\item 
+\mbox{\hyperlink{classmain_1_1_model_a64c4c99b45f6aae26eeb5a1340749cd0}{change\+\_\+sectors}} (self, before, after)
+\item 
+\mbox{\hyperlink{classmain_1_1_model_a590f5d3928d41b245b45e71171968a78}{process\+\_\+queue}} (self)
+\item 
+\mbox{\hyperlink{classmain_1_1_model_a422a8eb1b075971f23308e2ef1d8d034}{process\+\_\+entire\+\_\+queue}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classmain_1_1_model_a98bcfc21e28aa59ffe06bf4a9e9396ee}\label{classmain_1_1_model_a98bcfc21e28aa59ffe06bf4a9e9396ee} 
+{\bfseries batch}
+\item 
+\Hypertarget{classmain_1_1_model_a00a3b213e5970c5cee4c4bbb1df835a3}\label{classmain_1_1_model_a00a3b213e5970c5cee4c4bbb1df835a3} 
+{\bfseries group}
+\item 
+\Hypertarget{classmain_1_1_model_a4c394454443f0b062e234e078f4ecf07}\label{classmain_1_1_model_a4c394454443f0b062e234e078f4ecf07} 
+{\bfseries world}
+\item 
+\Hypertarget{classmain_1_1_model_aec44f664b403fad29a8a80624dbf4157}\label{classmain_1_1_model_aec44f664b403fad29a8a80624dbf4157} 
+{\bfseries shown}
+\item 
+\Hypertarget{classmain_1_1_model_a99d3bbe0e4b3a9d356489713eecc9083}\label{classmain_1_1_model_a99d3bbe0e4b3a9d356489713eecc9083} 
+{\bfseries sectors}
+\item 
+\Hypertarget{classmain_1_1_model_a5b64fa538dc6e64b28e9fc921df1cf46}\label{classmain_1_1_model_a5b64fa538dc6e64b28e9fc921df1cf46} 
+{\bfseries queue}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmain_1_1_model_a20de1fb4ed98b65dc1f55c99acbf9fa4}{\+\_\+initialize}} (self)
+\item 
+\mbox{\hyperlink{classmain_1_1_model_af297f5059e1acc8abc3e3d84157c139d}{\+\_\+show\+\_\+block}} (self, position, texture)
+\item 
+\mbox{\hyperlink{classmain_1_1_model_a310b602ab7a7de7c11fa770a79d27ed3}{\+\_\+hide\+\_\+block}} (self, position)
+\item 
+\mbox{\hyperlink{classmain_1_1_model_a29f3a38658189a7ce115280231541594}{\+\_\+enqueue}} (self, func, \texorpdfstring{$\ast$}{*}args)
+\item 
+\mbox{\hyperlink{classmain_1_1_model_a0f08540ca50d5b714e3ea7fd947360f3}{\+\_\+dequeue}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classmain_1_1_model_a115672f68022c6c27c94877eb748153c}\label{classmain_1_1_model_a115672f68022c6c27c94877eb748153c} 
+{\bfseries \+\_\+shown}
+\item 
+\Hypertarget{classmain_1_1_model_a1b56382975a983a7eff5c94de08933fb}\label{classmain_1_1_model_a1b56382975a983a7eff5c94de08933fb} 
+{\bfseries \+\_\+show\+\_\+block}
+\item 
+\Hypertarget{classmain_1_1_model_aa3bf9cb2d29c2667de862b21db1ae554}\label{classmain_1_1_model_aa3bf9cb2d29c2667de862b21db1ae554} 
+{\bfseries \+\_\+hide\+\_\+block}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmain_1_1_model_a0f08540ca50d5b714e3ea7fd947360f3}\label{classmain_1_1_model_a0f08540ca50d5b714e3ea7fd947360f3} 
+\index{main.Model@{main.Model}!\_dequeue@{\_dequeue}}
+\index{\_dequeue@{\_dequeue}!main.Model@{main.Model}}
+\doxysubsubsection{\texorpdfstring{\_dequeue()}{\_dequeue()}}
+{\footnotesize\ttfamily main.\+Model.\+\_\+dequeue (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb} Pop the top function from the internal queue and call it.\end{DoxyVerb}
+ \Hypertarget{classmain_1_1_model_a29f3a38658189a7ce115280231541594}\label{classmain_1_1_model_a29f3a38658189a7ce115280231541594} 
+\index{main.Model@{main.Model}!\_enqueue@{\_enqueue}}
+\index{\_enqueue@{\_enqueue}!main.Model@{main.Model}}
+\doxysubsubsection{\texorpdfstring{\_enqueue()}{\_enqueue()}}
+{\footnotesize\ttfamily main.\+Model.\+\_\+enqueue (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{func,  }\item[{\texorpdfstring{$\ast$}{*}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb} Add `func` to the internal queue.\end{DoxyVerb}
+ \Hypertarget{classmain_1_1_model_a310b602ab7a7de7c11fa770a79d27ed3}\label{classmain_1_1_model_a310b602ab7a7de7c11fa770a79d27ed3} 
+\index{main.Model@{main.Model}!\_hide\_block@{\_hide\_block}}
+\index{\_hide\_block@{\_hide\_block}!main.Model@{main.Model}}
+\doxysubsubsection{\texorpdfstring{\_hide\_block()}{\_hide\_block()}}
+{\footnotesize\ttfamily main.\+Model.\+\_\+hide\+\_\+block (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb} Private implementation of the 'hide_block()` method.\end{DoxyVerb}
+ \Hypertarget{classmain_1_1_model_a20de1fb4ed98b65dc1f55c99acbf9fa4}\label{classmain_1_1_model_a20de1fb4ed98b65dc1f55c99acbf9fa4} 
+\index{main.Model@{main.Model}!\_initialize@{\_initialize}}
+\index{\_initialize@{\_initialize}!main.Model@{main.Model}}
+\doxysubsubsection{\texorpdfstring{\_initialize()}{\_initialize()}}
+{\footnotesize\ttfamily main.\+Model.\+\_\+initialize (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb} Initialize the world by placing all the blocks.\end{DoxyVerb}
+ \Hypertarget{classmain_1_1_model_af297f5059e1acc8abc3e3d84157c139d}\label{classmain_1_1_model_af297f5059e1acc8abc3e3d84157c139d} 
+\index{main.Model@{main.Model}!\_show\_block@{\_show\_block}}
+\index{\_show\_block@{\_show\_block}!main.Model@{main.Model}}
+\doxysubsubsection{\texorpdfstring{\_show\_block()}{\_show\_block()}}
+{\footnotesize\ttfamily main.\+Model.\+\_\+show\+\_\+block (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{position,  }\item[{}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb} Private implementation of the `show_block()` method.
+
+Parameters
+----------
+position : tuple of len 3
+    The (x, y, z) position of the block to show.
+texture : list of len 3
+    The coordinates of the texture squares. Use `tex_coords()` to
+    generate.\end{DoxyVerb}
+ \Hypertarget{classmain_1_1_model_a676d53fdaeafe8adf2a7114642a86bc5}\label{classmain_1_1_model_a676d53fdaeafe8adf2a7114642a86bc5} 
+\index{main.Model@{main.Model}!add\_block@{add\_block}}
+\index{add\_block@{add\_block}!main.Model@{main.Model}}
+\doxysubsubsection{\texorpdfstring{add\_block()}{add\_block()}}
+{\footnotesize\ttfamily main.\+Model.\+add\+\_\+block (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{position,  }\item[{}]{texture,  }\item[{}]{immediate = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Add a block with the given `texture` and `position` to the world.
+
+Parameters
+----------
+position : tuple of len 3
+    The (x, y, z) position of the block to add.
+texture : list of len 3
+    The coordinates of the texture squares. Use `tex_coords()` to
+    generate.
+immediate : bool
+    Whether or not to draw the block immediately.\end{DoxyVerb}
+ \Hypertarget{classmain_1_1_model_a64c4c99b45f6aae26eeb5a1340749cd0}\label{classmain_1_1_model_a64c4c99b45f6aae26eeb5a1340749cd0} 
+\index{main.Model@{main.Model}!change\_sectors@{change\_sectors}}
+\index{change\_sectors@{change\_sectors}!main.Model@{main.Model}}
+\doxysubsubsection{\texorpdfstring{change\_sectors()}{change\_sectors()}}
+{\footnotesize\ttfamily main.\+Model.\+change\+\_\+sectors (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{before,  }\item[{}]{after }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Move from sector `before` to sector `after`. A sector is a
+contiguous x, y sub-region of world. Sectors are used to speed up
+world rendering.\end{DoxyVerb}
+ \Hypertarget{classmain_1_1_model_ac51a59d9fe3f804f3f8fb24a6711254a}\label{classmain_1_1_model_ac51a59d9fe3f804f3f8fb24a6711254a} 
+\index{main.Model@{main.Model}!check\_neighbors@{check\_neighbors}}
+\index{check\_neighbors@{check\_neighbors}!main.Model@{main.Model}}
+\doxysubsubsection{\texorpdfstring{check\_neighbors()}{check\_neighbors()}}
+{\footnotesize\ttfamily main.\+Model.\+check\+\_\+neighbors (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{position }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Check all blocks surrounding `position` and ensure their visual
+state is current. This means hiding blocks that are not exposed and
+ensuring that all exposed blocks are shown. Usually used after a block
+is added or removed.\end{DoxyVerb}
+ \Hypertarget{classmain_1_1_model_a7dde0a23bb1925294043c80428a91fb4}\label{classmain_1_1_model_a7dde0a23bb1925294043c80428a91fb4} 
+\index{main.Model@{main.Model}!exposed@{exposed}}
+\index{exposed@{exposed}!main.Model@{main.Model}}
+\doxysubsubsection{\texorpdfstring{exposed()}{exposed()}}
+{\footnotesize\ttfamily main.\+Model.\+exposed (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{position }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Returns False is given `position` is surrounded on all 6 sides by
+blocks, True otherwise.\end{DoxyVerb}
+ \Hypertarget{classmain_1_1_model_ac02b839babafbb37e0d91d07f72ef9f4}\label{classmain_1_1_model_ac02b839babafbb37e0d91d07f72ef9f4} 
+\index{main.Model@{main.Model}!hide\_block@{hide\_block}}
+\index{hide\_block@{hide\_block}!main.Model@{main.Model}}
+\doxysubsubsection{\texorpdfstring{hide\_block()}{hide\_block()}}
+{\footnotesize\ttfamily main.\+Model.\+hide\+\_\+block (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{position,  }\item[{}]{immediate = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Hide the block at the given `position`. Hiding does not remove the
+block from the world.
+
+Parameters
+----------
+position : tuple of len 3
+    The (x, y, z) position of the block to hide.
+immediate : bool
+    Whether or not to immediately remove the block from the canvas.\end{DoxyVerb}
+ \Hypertarget{classmain_1_1_model_a446c4e8ef55250fe1c5e18e9cb395acb}\label{classmain_1_1_model_a446c4e8ef55250fe1c5e18e9cb395acb} 
+\index{main.Model@{main.Model}!hide\_sector@{hide\_sector}}
+\index{hide\_sector@{hide\_sector}!main.Model@{main.Model}}
+\doxysubsubsection{\texorpdfstring{hide\_sector()}{hide\_sector()}}
+{\footnotesize\ttfamily main.\+Model.\+hide\+\_\+sector (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{sector }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Ensure all blocks in the given sector that should be hidden are
+removed from the canvas.\end{DoxyVerb}
+ \Hypertarget{classmain_1_1_model_a1fb515c7df516d65f7170ca305fa456d}\label{classmain_1_1_model_a1fb515c7df516d65f7170ca305fa456d} 
+\index{main.Model@{main.Model}!hit\_test@{hit\_test}}
+\index{hit\_test@{hit\_test}!main.Model@{main.Model}}
+\doxysubsubsection{\texorpdfstring{hit\_test()}{hit\_test()}}
+{\footnotesize\ttfamily main.\+Model.\+hit\+\_\+test (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{position,  }\item[{}]{vector,  }\item[{}]{max\+\_\+distance = {\ttfamily 8} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Line of sight search from current position. If a block is
+intersected it is returned, along with the block previously in the line
+of sight. If no block is found, return None, None.
+
+Parameters
+----------
+position : tuple of len 3
+    The (x, y, z) position to check visibility from.
+vector : tuple of len 3
+    The line of sight vector.
+max_distance : int
+    How many blocks away to search for a hit.\end{DoxyVerb}
+ \Hypertarget{classmain_1_1_model_a422a8eb1b075971f23308e2ef1d8d034}\label{classmain_1_1_model_a422a8eb1b075971f23308e2ef1d8d034} 
+\index{main.Model@{main.Model}!process\_entire\_queue@{process\_entire\_queue}}
+\index{process\_entire\_queue@{process\_entire\_queue}!main.Model@{main.Model}}
+\doxysubsubsection{\texorpdfstring{process\_entire\_queue()}{process\_entire\_queue()}}
+{\footnotesize\ttfamily main.\+Model.\+process\+\_\+entire\+\_\+queue (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Process the entire queue with no breaks.\end{DoxyVerb}
+ \Hypertarget{classmain_1_1_model_a590f5d3928d41b245b45e71171968a78}\label{classmain_1_1_model_a590f5d3928d41b245b45e71171968a78} 
+\index{main.Model@{main.Model}!process\_queue@{process\_queue}}
+\index{process\_queue@{process\_queue}!main.Model@{main.Model}}
+\doxysubsubsection{\texorpdfstring{process\_queue()}{process\_queue()}}
+{\footnotesize\ttfamily main.\+Model.\+process\+\_\+queue (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Process the entire queue while taking periodic breaks. This allows
+the game loop to run smoothly. The queue contains calls to
+_show_block() and _hide_block() so this method should be called if
+add_block() or remove_block() was called with immediate=False\end{DoxyVerb}
+ \Hypertarget{classmain_1_1_model_a4c0d35e7715e0d8a08ce7a4aadd8d7db}\label{classmain_1_1_model_a4c0d35e7715e0d8a08ce7a4aadd8d7db} 
+\index{main.Model@{main.Model}!remove\_block@{remove\_block}}
+\index{remove\_block@{remove\_block}!main.Model@{main.Model}}
+\doxysubsubsection{\texorpdfstring{remove\_block()}{remove\_block()}}
+{\footnotesize\ttfamily main.\+Model.\+remove\+\_\+block (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{position,  }\item[{}]{immediate = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Remove the block at the given `position`.
+
+Parameters
+----------
+position : tuple of len 3
+    The (x, y, z) position of the block to remove.
+immediate : bool
+    Whether or not to immediately remove block from canvas.\end{DoxyVerb}
+ \Hypertarget{classmain_1_1_model_acc35b15eedf57a872f2146ed41c0f636}\label{classmain_1_1_model_acc35b15eedf57a872f2146ed41c0f636} 
+\index{main.Model@{main.Model}!show\_block@{show\_block}}
+\index{show\_block@{show\_block}!main.Model@{main.Model}}
+\doxysubsubsection{\texorpdfstring{show\_block()}{show\_block()}}
+{\footnotesize\ttfamily main.\+Model.\+show\+\_\+block (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{position,  }\item[{}]{immediate = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Show the block at the given `position`. This method assumes the
+block has already been added with add_block()
+
+Parameters
+----------
+position : tuple of len 3
+    The (x, y, z) position of the block to show.
+immediate : bool
+    Whether or not to show the block immediately.\end{DoxyVerb}
+ \Hypertarget{classmain_1_1_model_aece571c3928ea7fdae70b4446d8ba525}\label{classmain_1_1_model_aece571c3928ea7fdae70b4446d8ba525} 
+\index{main.Model@{main.Model}!show\_sector@{show\_sector}}
+\index{show\_sector@{show\_sector}!main.Model@{main.Model}}
+\doxysubsubsection{\texorpdfstring{show\_sector()}{show\_sector()}}
+{\footnotesize\ttfamily main.\+Model.\+show\+\_\+sector (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{sector }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Ensure all blocks in the given sector that should be shown are
+drawn to the canvas.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/joeyb/\+Team\+K-\/\+Minecraft\+Python/main.\+py\end{DoxyCompactItemize}
