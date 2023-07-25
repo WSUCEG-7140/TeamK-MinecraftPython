@@ -1,0 +1,114 @@
+\doxysection{pygletbatchupdater.\+Updated\+Batch Class Reference}
+\hypertarget{classpygletbatchupdater_1_1_updated_batch}{}\label{classpygletbatchupdater_1_1_updated_batch}\index{pygletbatchupdater.UpdatedBatch@{pygletbatchupdater.UpdatedBatch}}
+Inheritance diagram for pygletbatchupdater.\+Updated\+Batch\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpygletbatchupdater_1_1_updated_batch}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpygletbatchupdater_1_1_updated_batch_ae80168f6e432afa329005bdcc25f9ac8}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \texorpdfstring{$\ast$}{*}args, \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}kwargs)
+\item 
+\mbox{\hyperlink{classpygletbatchupdater_1_1_updated_batch_a7d880c4bd2b217c1b2e0cc1ebf488977}{add}} (self, n, mode, group=None, \texorpdfstring{$\ast$}{*}vertex\+\_\+lists)
+\item 
+\mbox{\hyperlink{classpygletbatchupdater_1_1_updated_batch_a3832a8702f672f8c2426ede48c688a10}{delete}} (self)
+\item 
+\mbox{\hyperlink{classpygletbatchupdater_1_1_updated_batch_a531805edc9beb71a21eeb13622075fcb}{clear}} (self)
+\item 
+\mbox{\hyperlink{classpygletbatchupdater_1_1_updated_batch_a2ba707316bbf41900cb5c8a9fb69b8c2}{add\+\_\+indexed}} (self, n, mode, group, indices, \texorpdfstring{$\ast$}{*}vertex\+\_\+lists)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classpygletbatchupdater_1_1_updated_batch_a5713c077acbde6520725544fe9f98484}\label{classpygletbatchupdater_1_1_updated_batch_a5713c077acbde6520725544fe9f98484} 
+{\bfseries vertices}
+\item 
+\Hypertarget{classpygletbatchupdater_1_1_updated_batch_a7eb3b46d3f9d1299d84d0f0fad2d75e3}\label{classpygletbatchupdater_1_1_updated_batch_a7eb3b46d3f9d1299d84d0f0fad2d75e3} 
+{\bfseries colors}
+\item 
+\Hypertarget{classpygletbatchupdater_1_1_updated_batch_a1d2da25cc3ccc78fc70e464f4d480cd2}\label{classpygletbatchupdater_1_1_updated_batch_a1d2da25cc3ccc78fc70e464f4d480cd2} 
+{\bfseries vertex\+\_\+lists}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classpygletbatchupdater_1_1_updated_batch_ae80168f6e432afa329005bdcc25f9ac8}\label{classpygletbatchupdater_1_1_updated_batch_ae80168f6e432afa329005bdcc25f9ac8} 
+\index{pygletbatchupdater.UpdatedBatch@{pygletbatchupdater.UpdatedBatch}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!pygletbatchupdater.UpdatedBatch@{pygletbatchupdater.UpdatedBatch}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily pygletbatchupdater.\+Updated\+Batch.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{\texorpdfstring{$\ast$}{*}}]{args,  }\item[{\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{kwargs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initializes the UpdatedBatch object.
+
+Args:
+    *args: Variable-length arguments.
+    **kwargs: Keyword arguments.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classpygletbatchupdater_1_1_updated_batch_a7d880c4bd2b217c1b2e0cc1ebf488977}\label{classpygletbatchupdater_1_1_updated_batch_a7d880c4bd2b217c1b2e0cc1ebf488977} 
+\index{pygletbatchupdater.UpdatedBatch@{pygletbatchupdater.UpdatedBatch}!add@{add}}
+\index{add@{add}!pygletbatchupdater.UpdatedBatch@{pygletbatchupdater.UpdatedBatch}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily pygletbatchupdater.\+Updated\+Batch.\+add (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{n,  }\item[{}]{mode,  }\item[{}]{group = {\ttfamily None},  }\item[{\texorpdfstring{$\ast$}{*}}]{vertex\+\_\+lists }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds vertex data to the batch.
+
+Args:
+    n (int): Number of vertices.
+    mode (int): Rendering mode.
+    group (Group): Rendering group.
+    *vertex_lists: Variable-length argument containing vertex lists.
+
+Note:
+    - The format of each vertex list should be specified using the first element (e.g., 'v2f' for 2D vertices).
+    - The data of each vertex list should be provided as the second element.
+
+Example:
+    batch.add(4, pyglet.gl.GL_QUADS, None, ('v2f', [0, 0, 100, 0, 100, 100, 0, 100]), ('c3B', [255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 0]))\end{DoxyVerb}
+ \Hypertarget{classpygletbatchupdater_1_1_updated_batch_a2ba707316bbf41900cb5c8a9fb69b8c2}\label{classpygletbatchupdater_1_1_updated_batch_a2ba707316bbf41900cb5c8a9fb69b8c2} 
+\index{pygletbatchupdater.UpdatedBatch@{pygletbatchupdater.UpdatedBatch}!add\_indexed@{add\_indexed}}
+\index{add\_indexed@{add\_indexed}!pygletbatchupdater.UpdatedBatch@{pygletbatchupdater.UpdatedBatch}}
+\doxysubsubsection{\texorpdfstring{add\_indexed()}{add\_indexed()}}
+{\footnotesize\ttfamily pygletbatchupdater.\+Updated\+Batch.\+add\+\_\+indexed (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{n,  }\item[{}]{mode,  }\item[{}]{group,  }\item[{}]{indices,  }\item[{\texorpdfstring{$\ast$}{*}}]{vertex\+\_\+lists }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Adds indexed vertex data to the batch.
+
+Args:
+    n (int): Number of vertices.
+    mode (int): Rendering mode.
+    group (Group): Rendering group.
+    indices (list): List of indices.
+    *vertex_lists: Variable-length argument containing vertex lists.
+
+Note:
+    - The format of each vertex list should be specified using the first element (e.g., 'v2f' for 2D vertices).
+    - The data of each vertex list should be provided as the second element.
+
+Example:
+    batch.add_indexed(4, pyglet.gl.GL_QUADS, None, [0, 1, 2, 3], ('v2f', [0, 0, 100, 0, 100, 100, 0, 100]), ('c3B', [255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 0]))
+\end{DoxyVerb}
+ \Hypertarget{classpygletbatchupdater_1_1_updated_batch_a531805edc9beb71a21eeb13622075fcb}\label{classpygletbatchupdater_1_1_updated_batch_a531805edc9beb71a21eeb13622075fcb} 
+\index{pygletbatchupdater.UpdatedBatch@{pygletbatchupdater.UpdatedBatch}!clear@{clear}}
+\index{clear@{clear}!pygletbatchupdater.UpdatedBatch@{pygletbatchupdater.UpdatedBatch}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily pygletbatchupdater.\+Updated\+Batch.\+clear (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Clears the vertex and color data from the batch.
+\end{DoxyVerb}
+ \Hypertarget{classpygletbatchupdater_1_1_updated_batch_a3832a8702f672f8c2426ede48c688a10}\label{classpygletbatchupdater_1_1_updated_batch_a3832a8702f672f8c2426ede48c688a10} 
+\index{pygletbatchupdater.UpdatedBatch@{pygletbatchupdater.UpdatedBatch}!delete@{delete}}
+\index{delete@{delete}!pygletbatchupdater.UpdatedBatch@{pygletbatchupdater.UpdatedBatch}}
+\doxysubsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily pygletbatchupdater.\+Updated\+Batch.\+delete (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Deletes the vertex and color data from the batch.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/joeyb/\+Team\+K-\/\+Minecraft\+Python/pygletbatchupdater.\+py\end{DoxyCompactItemize}

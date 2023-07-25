@@ -8,11 +8,18 @@ import time
 from collections import deque
 from pyglet import image
 from pyglet.gl import *
+from pyglet.graphics import GL_FOG
 from pyglet.graphics import TextureGroup
 from pyglet.window import key, mouse
 
-from OpenGL.GL import *
-from OpenGL.GLU import *
+
+
+
+import sun
+import moon
+import clouds
+
+import sun
 
 import sun
 import moon
@@ -41,6 +48,7 @@ PLAYER_HEIGHT = 2
 
 SUN_RADIUS = 3
 MOON_RADIUS = 2
+CLOUD_RADIUS = 5
 
 if sys.version_info[0] >= 3:
     xrange = range
@@ -451,6 +459,10 @@ class Window(pyglet.window.Window):
         # When flying gravity has no effect and speed is increased.
         self.flying = False
 
+        # When true, character goes 3x faster when flying and walking.
+        self.tripleSpeed = False
+    
+
         # Strafing is moving lateral to the direction you are facing,
         # e.g. moving to the left or right while continuing to face forward.
         #
@@ -588,7 +600,7 @@ class Window(pyglet.window.Window):
         dt = min(dt, 0.2)
         for _ in xrange(m):
             self._update(dt / m)
-
+          
     def _update(self, dt):
         """ Private implementation of the `update()` method. This is where most
         of the motion logic lives, along with gravity and collision detection.
@@ -601,6 +613,10 @@ class Window(pyglet.window.Window):
         """
         # walking
         speed = FLYING_SPEED if self.flying else WALKING_SPEED
+
+        # Reads from key_on_pressed and key_on_release key.LCTRL
+        speed = speed * 3 if self.tripleSpeed else speed   
+
         d = dt * speed # distance covered this tick.
         dx, dy, dz = self.get_motion_vector()
         # New position in space, before accounting for gravity.
@@ -735,6 +751,8 @@ class Window(pyglet.window.Window):
             self.strafe[1] -= 1
         elif symbol == key.D:
             self.strafe[1] += 1
+        elif symbol == key.LCTRL:
+            self.tripleSpeed = True
         elif symbol == key.SPACE:
             if self.dy == 0:
                 self.dy = JUMP_SPEED
@@ -766,6 +784,8 @@ class Window(pyglet.window.Window):
             self.strafe[1] += 1
         elif symbol == key.D:
             self.strafe[1] -= 1
+        elif symbol == key.LCTRL:
+            self.tripleSpeed = False
 
     def on_resize(self, width, height):
         """ Called when the window is resized to a new `width` and `height`.
@@ -916,6 +936,7 @@ def main():
     setup()
     sun.create_sun(SUN_RADIUS, slices=30, stacks=30)
     moon.create_moon(MOON_RADIUS, slices=30, stacks=30)
+    clouds.create_cloud(CLOUD_RADIUS, slices=10, stacks=10)
     pyglet.app.run()
 
 
