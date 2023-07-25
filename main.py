@@ -15,6 +15,10 @@ from pyglet.window import key, mouse
 
 
 
+import sun
+import moon
+import clouds
+
 TICKS_PER_SEC = 60
 
 # Size of sectors used to ease block loading.
@@ -36,6 +40,10 @@ JUMP_SPEED = math.sqrt(2 * GRAVITY * MAX_JUMP_HEIGHT)
 TERMINAL_VELOCITY = 50
 
 PLAYER_HEIGHT = 2
+
+SUN_RADIUS = 3
+MOON_RADIUS = 2
+CLOUD_RADIUS = 5
 
 if sys.version_info[0] >= 3:
     xrange = range
@@ -881,6 +889,7 @@ def setup_fog():
     """ Configure the OpenGL fog properties.
 
     """
+
     # Enable fog. Fog "blends a fog color with each rasterized pixel fragment's
     # post-texturing color."
     glEnable(GL_FOG)
@@ -920,6 +929,9 @@ def main():
     # Hide the mouse cursor and prevent the mouse from leaving the window.
     window.set_exclusive_mouse(True)
     setup()
+    sun.create_sun(SUN_RADIUS, slices=30, stacks=30)
+    moon.create_moon(MOON_RADIUS, slices=30, stacks=30)
+    clouds.create_cloud(CLOUD_RADIUS, slices=10, stacks=10)
     pyglet.app.run()
 
 
