@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['on_5fcollision_0',['on_collision',['../classlava_1_1_block.html#a30b49e6ea20050f40e3f0b0ee85ad418',1,'lava.Block.on_collision()'],['../classlava_1_1_snow_block.html#ad22655b3209fef3cc8fba9cfe5421aee',1,'lava.SnowBlock.on_collision()']]],
+  ['on_5fcollision_0',['on_collision',['../classlava_1_1_block.html#a30b49e6ea20050f40e3f0b0ee85ad418',1,'lava.Block.on_collision()'],['../classlava_1_1_snow_block.html#ad22655b3209fef3cc8fba9cfe5421aee',1,'lava.SnowBlock.on_collision()'],['../classsnow_1_1_snow_block.html#a6d28aab456e60d6f6b0de700fbece700',1,'snow.SnowBlock.on_collision()']]],
   ['on_5fdraw_1',['on_draw',['../classmain_1_1_window.html#ad9370b2059f42e39768644a0904452d7',1,'main::Window']]],
   ['on_5fjoyaxis_5fmotion_2',['on_joyaxis_motion',['../classjoystick_1_1_joystick.html#a316dfe8c422fbebadc0b5ab737dd1f41',1,'joystick::Joystick']]],
   ['on_5fjoybutton_5fpress_3',['on_joybutton_press',['../classjoystick_1_1_joystick.html#a1c26ee622c9e7cfed5d0ecdbac5fe994',1,'joystick::Joystick']]],

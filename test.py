@@ -4,6 +4,9 @@ from terrain import *
 from hit import *
 from keyboard_mouse import *
 from pygletbatchupdater import *
+from lava import *
+from joystick import *
+
 
 import unittest
 
@@ -116,13 +119,15 @@ if __name__ == '__main__':
 """
 Tests from main.py
 """
+
+## @brief Test case for setting up GL_FOG texture mapping
 def test_fog():
     try:
         setup_fog()
         assert True
     except: assert False
 
-
+## @brief Test case for normal speed when not flying           
 def test_tripleSpeedFalse():
         flying = False
         tripleSpeed = False
@@ -141,6 +146,7 @@ def test_tripleSpeedFalse():
             else:
                 assert speed == 5
 
+## @brief Test case for Triple speed when not flying           
 def test_tripleSpeedTrue():
         flying = False
         tripleSpeed = True
@@ -158,7 +164,8 @@ def test_tripleSpeedTrue():
                 assert speed == 15
             else:
                 assert speed == 5
-                
+
+## @brief Test case for Triple speed when flying                 
 def test_flyingTripleSpeed():
         flying = True
         tripleSpeed = True
@@ -177,6 +184,7 @@ def test_flyingTripleSpeed():
             else:
                 assert speed == 5
                 
+## @brief Test case for normal speed when flying           
 def test_flyingTripleSpeedFalse():
         flying = True
         tripleSpeed = False

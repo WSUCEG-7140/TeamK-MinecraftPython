@@ -105,6 +105,8 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>break_block</b> (self)</td></tr>
 <tr class="memdesc:acba0cf923539a50c5ea875f4235aed79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logic to break the snow block and remove it from the game world. <br /></td></tr>
 <tr class="separator:acba0cf923539a50c5ea875f4235aed79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d28aab456e60d6f6b0de700fbece700"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnow_1_1_snow_block.html#a6d28aab456e60d6f6b0de700fbece700">on_collision</a> (self, other)</td></tr>
+<tr class="separator:a6d28aab456e60d6f6b0de700fbece700"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3308cd077eff5f8958f99e1e49fa5a4a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsnow_1_1_block.html#a3308cd077eff5f8958f99e1e49fa5a4a">__init__</a> (self, id, name, texture)</td></tr>
 <tr class="memdesc:a3308cd077eff5f8958f99e1e49fa5a4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the Block class.  <br /></td></tr>
 <tr class="separator:a3308cd077eff5f8958f99e1e49fa5a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,6 +149,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a582db5541ae7de3238857ca85955e294"><td class="memItemLeft" align="right" valign="top"><a id="a582db5541ae7de3238857ca85955e294" name="a582db5541ae7de3238857ca85955e294"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>tool_required</b></td></tr>
 <tr class="separator:a582db5541ae7de3238857ca85955e294"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0956808ed68ea051c25cd9ed9cd2f1ae"><td class="memItemLeft" align="right" valign="top"><a id="a0956808ed68ea051c25cd9ed9cd2f1ae" name="a0956808ed68ea051c25cd9ed9cd2f1ae"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>is_melted</b></td></tr>
+<tr class="separator:a0956808ed68ea051c25cd9ed9cd2f1ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_classsnow_1_1_block"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classsnow_1_1_block')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classsnow_1_1_block.html">snow.Block</a></td></tr>
 <tr class="memitem:ab2656ef7c5c4b09b4784be2efb64c86a inherit pub_attribs_classsnow_1_1_block"><td class="memItemLeft" align="right" valign="top">
 &#160;</td><td class="memItemRight" valign="bottom"><b>id</b></td></tr>
@@ -184,6 +189,38 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6d28aab456e60d6f6b0de700fbece700" name="a6d28aab456e60d6f6b0de700fbece700"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d28aab456e60d6f6b0de700fbece700">&#9670;&#160;</a></span>on_collision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">snow.SnowBlock.on_collision </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>other</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Handle collisions with other blocks.
+If the SnowBlock collides with Lava, it will be melted.
+Parameters:
+    other (Block): The other block involved in the collision.
+</pre> 
+</div>
+</div>
 <a id="aaecea5a25c27d0ebb58194dc4722ed0b" name="aaecea5a25c27d0ebb58194dc4722ed0b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaecea5a25c27d0ebb58194dc4722ed0b">&#9670;&#160;</a></span>on_player_interact()</h2>
 

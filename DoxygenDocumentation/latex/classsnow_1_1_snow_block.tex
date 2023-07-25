@@ -20,7 +20,9 @@ Inheritance diagram for snow.\+Snow\+Block\+:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Handles player interaction with the snow block. \end{DoxyCompactList}\item 
 \Hypertarget{classsnow_1_1_snow_block_acba0cf923539a50c5ea875f4235aed79}\label{classsnow_1_1_snow_block_acba0cf923539a50c5ea875f4235aed79} 
 {\bfseries break\+\_\+block} (self)
-\begin{DoxyCompactList}\small\item\em Logic to break the snow block and remove it from the game world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Logic to break the snow block and remove it from the game world. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsnow_1_1_snow_block_a6d28aab456e60d6f6b0de700fbece700}{on\+\_\+collision}} (self, other)
+\end{DoxyCompactItemize}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classsnow_1_1_block_a3308cd077eff5f8958f99e1e49fa5a4a}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, id, name, texture)
@@ -63,6 +65,9 @@ Inheritance diagram for snow.\+Snow\+Block\+:\begin{figure}[H]
 \item 
 \Hypertarget{classsnow_1_1_snow_block_a582db5541ae7de3238857ca85955e294}\label{classsnow_1_1_snow_block_a582db5541ae7de3238857ca85955e294} 
 {\bfseries tool\+\_\+required}
+\item 
+\Hypertarget{classsnow_1_1_snow_block_a0956808ed68ea051c25cd9ed9cd2f1ae}\label{classsnow_1_1_snow_block_a0956808ed68ea051c25cd9ed9cd2f1ae} 
+{\bfseries is\+\_\+melted}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classsnow_1_1_block}{snow.\+Block}}}
 \begin{DoxyCompactItemize}
@@ -96,7 +101,18 @@ Reimplemented from \mbox{\hyperlink{classsnow_1_1_block_a3308cd077eff5f8958f99e1
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classsnow_1_1_snow_block_aaecea5a25c27d0ebb58194dc4722ed0b}\label{classsnow_1_1_snow_block_aaecea5a25c27d0ebb58194dc4722ed0b} 
+\Hypertarget{classsnow_1_1_snow_block_a6d28aab456e60d6f6b0de700fbece700}\label{classsnow_1_1_snow_block_a6d28aab456e60d6f6b0de700fbece700} 
+\index{snow.SnowBlock@{snow.SnowBlock}!on\_collision@{on\_collision}}
+\index{on\_collision@{on\_collision}!snow.SnowBlock@{snow.SnowBlock}}
+\doxysubsubsection{\texorpdfstring{on\_collision()}{on\_collision()}}
+{\footnotesize\ttfamily snow.\+Snow\+Block.\+on\+\_\+collision (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{other }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Handle collisions with other blocks.
+If the SnowBlock collides with Lava, it will be melted.
+Parameters:
+    other (Block): The other block involved in the collision.
+\end{DoxyVerb}
+ \Hypertarget{classsnow_1_1_snow_block_aaecea5a25c27d0ebb58194dc4722ed0b}\label{classsnow_1_1_snow_block_aaecea5a25c27d0ebb58194dc4722ed0b} 
 \index{snow.SnowBlock@{snow.SnowBlock}!on\_player\_interact@{on\_player\_interact}}
 \index{on\_player\_interact@{on\_player\_interact}!snow.SnowBlock@{snow.SnowBlock}}
 \doxysubsubsection{\texorpdfstring{on\_player\_interact()}{on\_player\_interact()}}
