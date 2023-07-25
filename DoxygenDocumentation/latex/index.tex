@@ -1,0 +1,121 @@
+\chapter{Minecraft}
+\hypertarget{index}{}\label{index}\index{Minecraft@{Minecraft}}
+\label{index_md__c_1_2_users_2joeyb_2_team_k-_minecraft_python_2_r_e_a_d_m_e}%
+\Hypertarget{index_md__c_1_2_users_2joeyb_2_team_k-_minecraft_python_2_r_e_a_d_m_e}%
+ Simple Minecraft-\/inspired demo written in Python and Pyglet.
+
+\href{http://www.youtube.com/watch?v=kC3lwK631X8}{\texttt{ http\+://www.\+youtube.\+com/watch?v=k\+C3lw\+K631\+X8}}
+
+{\bfseries{Like this project?}}
+
+You might also like my other Minecraft clone written in C using modern Open\+GL (GL shader language). It performs better, has better terrain generation and saves state to a sqlite database. See here\+:
+
+\href{https://github.com/fogleman/Craft}{\texttt{ https\+://github.\+com/fogleman/\+Craft}}\hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{Goals and Vision}{Goals and Vision}}\label{index_autotoc_md1}
+I would like to see this project turn into an educational tool. Kids love Minecraft and Python is a great first language. This is a good opportunity to get children excited about programming.
+
+The code should become well commented and more easily configurable. It should be easy to make some simple changes and see the results quickly.
+
+I think it would be great to turn the project into more of a library / API... a Python package that you import and then use / configure to setup a world and run it. Something along these lines...
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import}\ mc}
+\DoxyCodeLine{}
+\DoxyCodeLine{world\ =\ mc.World(...)}
+\DoxyCodeLine{world.set\_block(x,\ y,\ z,\ mc.DIRT)}
+\DoxyCodeLine{mc.run(world)}
+
+\end{DoxyCode}
+
+
+The API could contain functionality for the following\+:
+
+
+\begin{DoxyItemize}
+\item Easily configurable parameters like gravity, jump velocity, walking speed, etc.
+\item Hooks for terrain generation.
+\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{How to Run}{How to Run}}\label{index_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{pip\ install\ pyglet==1.5.27\ \#\ This\ is\ the\ latest\ working\ version\ for\ the\ code}
+\DoxyCodeLine{pip\ install\ pyopengl\ \#\ Confirmed\ works\ with\ Python\ 3.11}
+\DoxyCodeLine{pip\ install\ controller\ \#\ Needed\ for\ keyboard\_mouse.py}
+\DoxyCodeLine{git\ clone\ https://github.com/fogleman/Minecraft.git}
+\DoxyCodeLine{cd\ Minecraft}
+\DoxyCodeLine{python\ main.py}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md3}{}\doxysubsection{\texorpdfstring{Mac}{Mac}}\label{index_autotoc_md3}
+On Mac OS X, you may have an issue with running Pyglet in 64-\/bit mode. Try running Python in 32-\/bit mode first\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{arch\ -\/i386\ python\ main.py}
+
+\end{DoxyCode}
+
+
+If that doesn\textquotesingle{}t work, set Python to run in 32-\/bit mode by default\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{defaults\ write\ com.apple.versioner.python\ Prefer-\/32-\/Bit\ -\/bool\ yes\ }
+
+\end{DoxyCode}
+
+
+This assumes you are using the OS X default Python. Works on Lion 10.\+7 with the default Python 2.\+7, and may work on other versions too. Please raise an issue if not.
+
+Or try Pyglet 1.\+2 alpha, which supports 64-\/bit mode\+: ~\newline
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{pip\ install\ https://pyglet.googlecode.com/files/pyglet-\/1.2alpha1.tar.gz\ }
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md4}{}\doxysubsection{\texorpdfstring{If you don\textquotesingle{}t have pip or git}{If you don't have pip or git}}\label{index_autotoc_md4}
+For pip\+:
+
+
+\begin{DoxyItemize}
+\item Mac or Linux\+: install with {\ttfamily sudo easy\+\_\+install pip} (Mac or Linux) -\/ or (Linux) find a package called something like \textquotesingle{}python-\/pip\textquotesingle{} in your package manager.
+\item Windows\+: \href{http://stackoverflow.com/a/12476379/992887}{\texttt{ install Distribute then Pip}} using the linked .MSI installers.
+\end{DoxyItemize}
+
+For git\+:
+
+
+\begin{DoxyItemize}
+\item Mac\+: install \href{http://mxcl.github.com/homebrew/}{\texttt{ Homebrew}} first, then {\ttfamily brew install git}.
+\item Windows or Linux\+: see \href{http://git-scm.com/book/en/Getting-Started-Installing-Git}{\texttt{ Installing Git}} from the {\itshape Pro Git} book.
+\end{DoxyItemize}
+
+See the \href{https://github.com/fogleman/Minecraft/wiki}{\texttt{ wiki}} for this project to install Python, and other tips.\hypertarget{index_autotoc_md5}{}\doxysection{\texorpdfstring{How to Play}{How to Play}}\label{index_autotoc_md5}
+\hypertarget{index_autotoc_md6}{}\doxysubsection{\texorpdfstring{Moving}{Moving}}\label{index_autotoc_md6}
+
+\begin{DoxyItemize}
+\item W\+: forward
+\item S\+: back
+\item A\+: strafe left
+\item D\+: strafe right
+\item Mouse\+: look around
+\item Space\+: jump
+\item Tab\+: toggle flying mode
+\item Left Ctrl\+: Hold for 3x speed modifier
+\end{DoxyItemize}\hypertarget{index_autotoc_md7}{}\doxysubsection{\texorpdfstring{Building}{Building}}\label{index_autotoc_md7}
+
+\begin{DoxyItemize}
+\item Selecting type of block to create\+:
+\begin{DoxyItemize}
+\item 1\+: brick
+\item 2\+: grass
+\item 3\+: sand
+\end{DoxyItemize}
+\item Mouse left-\/click\+: remove block
+\item Mouse right-\/click\+: create block
+\end{DoxyItemize}\hypertarget{index_autotoc_md8}{}\doxysubsection{\texorpdfstring{Quitting}{Quitting}}\label{index_autotoc_md8}
+
+\begin{DoxyItemize}
+\item ESC\+: release mouse, then close window 
+\end{DoxyItemize}
