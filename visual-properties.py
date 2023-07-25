@@ -1,3 +1,10 @@
+"""
+File: visual-properties.py
+
+Description: A  code to demonstrate object properties.
+
+"""
+
 # Set transparency-related variables
 transparent = True    # Indicates whether the object is transparent
 transparency = 2      # Transparency level (assumed to be on a scale of 0-10)
