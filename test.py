@@ -646,6 +646,8 @@ shading_values = [
 process_test_case(4, transparent, transparency, is_cube, glass, translucent, colliders, vertex_positions, tex_coords, shading_values)
 
 
+
+
 """
 Tests from clouds.py
 """
@@ -659,9 +661,9 @@ from math import sin, cos, pi
 Test create the clouds' vertex data
 """
 def create_cloud(radius, slices, stacks):
-    create_cloud.assertGreater(radius, 0, 'radius is not greater than 0!')
-    create_cloud.assertGreater(slices, 0, 'slices is not greater than 0!')
-    create_cloud.assertGreater(stacks, 0, 'stacks is not greater than 0!')
+    assert radius > 0, 'radius is not greater than 0!'
+    assert slices > 0, 'slices is not greater than 0!'
+    assert stacks > 0, 'stacks is not greater than 0!'
     
     vertices = []
     for stack in range(stacks + 1):
@@ -670,19 +672,19 @@ def create_cloud(radius, slices, stacks):
             y = radius * sin(-pi / 2 + pi * stack / stacks)
             z = radius * sin(2 * pi * slice / slices) * sin(pi * stack / stacks)
             vertices.extend([x, y, z])
-    create_cloud.assertIsNotNone(vertices, 'vertices is empty!')
-    create_cloud.asseetIsNotNone(create_clouds(pyglet.graphics.vertex_list(len(vertices) // 3, ('v3f', vertices))), 'vertex_list is empty!')
+    assert vertices is not None, 'vertices is empty!'
+    assert pyglet.graphics.vertex_list(len(vertices) // 3, ('v3f', vertices)) is not None, 'vertex_list is empty!'
 
 
 """
 Test create cloud positions
 """
 def create_clouds(sphere_vertex_list):
-    clouds.assertIsNotNone(sphere_vertex_list, 'sphere_vertex_list is empty!')
+    assert sphere_vertex_list is not None, 'sphere_vertex_list is empty!'
     CLOUD_HEIGHT = 20
     NUM_CLOUDS = 30
     CLOUD_TEXTURE_PATH = 'cloud_texture.png'
-    clouds.assertIsNotNone(CLOUD_TEXTURE_PATH, 'CLOUD_TEXTURE_PATH is empty!')
+    assert CLOUD_TEXTURE_PATH is not None , 'CLOUD_TEXTURE_PATH is empty!'
     clouds = []
 
     """
@@ -690,7 +692,7 @@ def create_clouds(sphere_vertex_list):
     """
     cloud_image = pyglet.image.load(CLOUD_TEXTURE_PATH)
     cloud_texture = cloud_image.get_texture()
-    clouds.assertIsNotNone(cloud_texture, 'cloud_texture is empty!')
+    assert cloud_texture is not None, 'cloud_texture is empty!'
     glBindTexture(GL_TEXTURE_2D, cloud_texture.id)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST)
 
@@ -700,7 +702,7 @@ def create_clouds(sphere_vertex_list):
         z = randint(-40, 40)
         clouds.append((x, y, z))
 
-    clouds.assertIsNotNone(clouds, 'clouds is empty!')
+    assert clouds is not None, 'clouds is empty!'
 
     draw(sphere_vertex_list, clouds, cloud_texture)
 
@@ -711,9 +713,9 @@ Test enable buffer to draw
 def draw(sphere_vertex_list, clouds, cloud_texture):
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glLoadIdentity()
-    clouds.assertIsNotNone(sphere_vertex_list, 'sphere_vertex_list is empty!')
-    clouds.assertIsNotNone(clouds, 'clouds is empty!')
-    clouds.assertIsNotNone(cloud_texture, 'cloud_texture is empty!')
+    assert sphere_vertex_list is not None, 'sphere_vertex_list is empty!'
+    assert clouds is not None, 'clouds is empty!'
+    assert cloud_texture is not None, 'cloud_texture is empty!'
     draw_clouds(sphere_vertex_list, clouds, cloud_texture)
 
 
@@ -721,9 +723,9 @@ def draw(sphere_vertex_list, clouds, cloud_texture):
 Test draw the clouds
 """
 def draw_clouds(sphere_vertex_list, clouds, cloud_texture):
-    clouds.assertIsNotNone(sphere_vertex_list, 'sphere_vertex_list is empty!')
-    clouds.assertIsNotNone(clouds, 'clouds is empty!')
-    clouds.assertIsNotNone(cloud_texture, 'cloud_texture is empty!')
+    assert sphere_vertex_list is not None, 'sphere_vertex_list is empty!'
+    assert clouds is not None, 'clouds is empty!'
+    assert cloud_texture is not None, 'cloud_texture is empty!'
     glBindTexture(GL_TEXTURE_2D, cloud_texture.id)
     glColor4f(1, 1, 1, 1)
 
