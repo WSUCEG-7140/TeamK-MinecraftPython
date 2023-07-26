@@ -45,3 +45,9 @@ class TestHitRay(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+"""
+expected output:
+ran testcases in 0.01 seconds
+
+"""
