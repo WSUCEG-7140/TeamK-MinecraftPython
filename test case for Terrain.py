@@ -158,3 +158,11 @@ class TestTerrain(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+"""
+ Expected Output:                                     
+          blue blue blue        
+          blue blue blue        
+          blue blue blue        
+                                                                         
+"""
