@@ -6,17 +6,17 @@ class Hit_ray:
     """
     Represents a ray in a 3D world and its intersection with blocks.
 
-    Contracts:
+    @note Contracts:
     - Preconditions:
-        - The 'world' parameter in the constructor must be a valid World object.
-        - The 'rotation' parameter in the constructor must be a tuple containing two float values (yaw and pitch) in radians.
-        - The 'starting_position' parameter in the constructor must be a tuple containing three float values (x, y, z).
+        - @param world (World): The 'world' parameter in the constructor must be a valid World object.
+        - @param rotation (tuple): The 'rotation' parameter in the constructor must be a tuple containing two float values (yaw and pitch) in radians.
+        - @param starting_position (tuple): The 'starting_position' parameter in the constructor must be a tuple containing three float values (x, y, z).
     - Postconditions:
         - After the constructor is called, the object's 'vector' must be a unit vector with a magnitude of 1.
         - The object's 'position' and 'block' must be initialized based on the 'starting_position'.
         - The object's 'distance' must be set to 0.
 
-    Literate Programming:
+    @note Literate Programming:
     We will intersperse the code with explanatory comments to improve understanding.
 
     """
@@ -25,10 +25,9 @@ class Hit_ray:
         """
         Constructor for Hit_ray.
 
-        Parameters:
-            world (World): The 3D world in which the ray exists.
-            rotation (tuple): Tuple containing the rotation angles in radians (yaw, pitch).
-            starting_position (tuple): Tuple containing the starting position of the ray (x, y, z).
+        @param world (World): The 3D world in which the ray exists.
+        @param rotation (tuple): Tuple containing the rotation angles in radians (yaw, pitch).
+        @param starting_position (tuple): Tuple containing the starting position of the ray (x, y, z).
         """
         # Check preconditions
         assert isinstance(world, World), "Invalid 'world' parameter. Expected a valid World object."
@@ -55,14 +54,12 @@ class Hit_ray:
         """
         Check for a potential hit with a block along the ray path.
 
-        Parameters:
-            hit_callback (function): A callback function to be called when a block is hit.
-            distance (float): The distance traveled from the current point to the next point.
-            current_block (tuple): Tuple containing the current block's position (x, y, z).
-            next_block (tuple): Tuple containing the next block's position (x, y, z).
+        @param hit_callback (function): A callback function to be called when a block is hit.
+        @param distance (float): The distance traveled from the current point to the next point.
+        @param current_block (tuple): Tuple containing the current block's position (x, y, z).
+        @param next_block (tuple): Tuple containing the next block's position (x, y, z).
 
-        Returns:
-            bool: True if a block is hit, False otherwise.
+        @returns bool: True if a block is hit, False otherwise.
         """
         # Check preconditions
         assert callable(hit_callback), "Invalid 'hit_callback' parameter. Expected a callable function."
@@ -85,11 +82,9 @@ class Hit_ray:
         """
         Move the ray one step forward and check for intersections with blocks.
 
-        Parameters:
-            hit_callback (function): A callback function to be called when a block is hit.
+        @param hit_callback (function): A callback function to be called when a block is hit.
 
-        Returns:
-            bool: True if a block is hit, False otherwise.
+        @returns bool: True if a block is hit, False otherwise.
         """
         # Check preconditions
         assert callable(hit_callback), "Invalid 'hit_callback' parameter. Expected a callable function."
