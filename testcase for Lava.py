@@ -24,3 +24,13 @@ class SnowBlockTestCase(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+"""
+expected value:
+Snow block melted!
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+"""
