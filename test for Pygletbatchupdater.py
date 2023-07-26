@@ -1,3 +1,5 @@
+#test case for josephreddy-#issue4
+
 """
 Tests from pygletbatchupdater.py
 """
