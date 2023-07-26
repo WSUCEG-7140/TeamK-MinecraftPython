@@ -6,7 +6,7 @@ class UpdatedBatch(Batch):
     """
     An extension of the pyglet.graphics.Batch class with additional features.
 
-    Contracts:
+    @note Contracts:
     - Preconditions:
         None
     - Postconditions:
@@ -18,9 +18,8 @@ class UpdatedBatch(Batch):
         """
         Initializes the UpdatedBatch object.
 
-        Args:
-            *args: Variable-length arguments.
-            **kwargs: Keyword arguments.
+        @param[in] *args: Variable-length arguments.
+        @param[in] **kwargs: Keyword arguments.
         """
         super().__init__(*args, **kwargs)
 
@@ -32,20 +31,20 @@ class UpdatedBatch(Batch):
         """
         Adds vertex data to the batch.
 
-        Args:
-            n (int): Number of vertices.
-            mode (int): Rendering mode.
-            group (Group): Rendering group.
-            *vertex_lists: Variable-length argument containing vertex lists.
+        @param[in] n (int): Number of vertices.
+        @param[in] mode (int): Rendering mode.
+        @param[in] group (Group): Rendering group.
+        @param[in] *vertex_lists: Variable-length argument containing vertex lists.
 
-        Note:
-            - The format of each vertex list should be specified using the first element (e.g., 'v2f' for 2D vertices).
-            - The data of each vertex list should be provided as the second element.
+        @note The format of each vertex list should be specified using the first element (e.g., 'v2f' for 2D vertices).
+        @note The data of each vertex list should be provided as the second element.
 
-        Example:
-            batch.add(4, pyglet.gl.GL_QUADS, None, ('v2f', [0, 0, 100, 0, 100, 100, 0, 100]), ('c3B', [255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 0]))
+        @note Example:
+        @code{python}
+        batch.add(4, pyglet.gl.GL_QUADS, None, ('v2f', [0, 0, 100, 0, 100, 100, 0, 100]), ('c3B', [255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 0]))
+        @endcode
 
-        Contracts:
+        @note Contracts:
         - Preconditions:
             None
         - Postconditions:
@@ -72,7 +71,7 @@ class UpdatedBatch(Batch):
         """
         Deletes the vertex and color data from the batch.
 
-        Contracts:
+        @note Contracts:
         - Preconditions:
             None
         - Postconditions:
@@ -85,7 +84,7 @@ class UpdatedBatch(Batch):
         """
         Clears the vertex and color data from the batch.
 
-        Contracts:
+        @note Contracts:
         - Preconditions:
             None
         - Postconditions:
@@ -98,21 +97,21 @@ class UpdatedBatch(Batch):
         """
         Adds indexed vertex data to the batch.
 
-        Args:
-            n (int): Number of vertices.
-            mode (int): Rendering mode.
-            group (Group): Rendering group.
-            indices (list): List of indices.
-            *vertex_lists: Variable-length argument containing vertex lists.
+        @param[in] n (int): Number of vertices.
+        @param[in] mode (int): Rendering mode.
+        @param[in] group (Group): Rendering group.
+        @param[in] indices (list): List of indices.
+        @param[in] *vertex_lists: Variable-length argument containing vertex lists.
 
-        Note:
-            - The format of each vertex list should be specified using the first element (e.g., 'v2f' for 2D vertices).
-            - The data of each vertex list should be provided as the second element.
+        @note The format of each vertex list should be specified using the first element (e.g., 'v2f' for 2D vertices).
+        @note The data of each vertex list should be provided as the second element.
 
-        Example:
-            batch.add_indexed(4, pyglet.gl.GL_QUADS, None, [0, 1, 2, 3], ('v2f', [0, 0, 100, 0, 100, 100, 0, 100]), ('c3B', [255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 0]))
+        @note Example:
+        @code{python}
+        batch.add_indexed(4, pyglet.gl.GL_QUADS, None, [0, 1, 2, 3], ('v2f', [0, 0, 100, 0, 100, 100, 0, 100]), ('c3B', [255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255, 0]))
+        @endcode
 
-        Contracts:
+        @note Contracts:
         - Preconditions:
             None
         - Postconditions:
