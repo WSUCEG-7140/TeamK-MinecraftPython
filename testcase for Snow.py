@@ -79,3 +79,14 @@ class SnowBlockTestCase(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+"""
+expected value:
+White Block (Snow)
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK
+"""
