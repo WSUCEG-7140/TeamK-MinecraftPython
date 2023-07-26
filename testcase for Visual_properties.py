@@ -1,3 +1,5 @@
+#test cases for josephreddy-#issue19
+
 """
 Tests from visual-properties.py
 """
