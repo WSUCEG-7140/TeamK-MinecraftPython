@@ -1,15 +1,22 @@
 """
 Tests from pygletbatchupdater.py
 """
+
+
 import unittest
 import pyglet
 from pyglet.graphics import Batch
 from pyglet.gl import *
 
+## \class TestUpdatedBatch
+# A class for testing the UpdatedBatch class.
 class TestUpdatedBatch(unittest.TestCase):
+
+    ## \brief Set up the test environment before each test case.
     def setUp(self):
         self.batch = UpdatedBatch()
 
+    ## \brief Test the add method of UpdatedBatch.
     def test_add(self):
         """
         Test the add method of UpdatedBatch.
@@ -18,6 +25,7 @@ class TestUpdatedBatch(unittest.TestCase):
         self.assertEqual(len(self.batch.vertices), 8)
         self.assertEqual(len(self.batch.colors), 12)
 
+    ## \brief Test the add_indexed method of UpdatedBatch.
     def test_add_indexed(self):
         """
         Test the add_indexed method of UpdatedBatch.
