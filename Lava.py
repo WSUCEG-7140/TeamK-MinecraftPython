@@ -3,7 +3,7 @@ class Block:
         """
         Initializes a generic block.
 
-        Contracts:
+        @note Contracts:
         - Postconditions:
             - The 'is_melted' attribute is set to False by default.
         """
@@ -13,8 +13,7 @@ class Block:
         """
         Placeholder method for handling collisions.
 
-        Parameters:
-            other (Block): The other block involved in the collision.
+        @param other (Block): The other block involved in the collision.
         """
         # No preconditions or postconditions for this placeholder method.
         pass
@@ -27,8 +26,7 @@ class SnowBlock(Block):
 
         If the SnowBlock collides with Lava, it will be melted.
 
-        Parameters:
-            other (Block): The other block involved in the collision.
+        @param other (Block): The other block involved in the collision.
         """
         # Check precondition
         assert isinstance(other, Block), "Invalid 'other' parameter. Expected a Block instance."
@@ -42,7 +40,7 @@ class Lava(Block):
     """
     A class representing a Lava block.
 
-    Contracts:
+    @note Contracts:
     - Preconditions:
         None
     - Postconditions:
