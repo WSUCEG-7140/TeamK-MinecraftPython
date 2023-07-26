@@ -1,5 +1,5 @@
 """
-File: visual-properties.py
+File: Visual-properties.py
 
 Description: A  code to demonstrate object properties.
 
