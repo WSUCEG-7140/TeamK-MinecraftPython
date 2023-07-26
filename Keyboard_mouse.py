@@ -119,7 +119,6 @@ class Keyboard_Mouse():
             self.start_move(self.MoveMode.UP)
         elif key == pyglet.window.key.LSHIFT:
             self.start_move(self.MoveMode.DOWN)
-        # Add more key handling code if needed
 
     def on_key_release(self, key, modifiers):
         """
