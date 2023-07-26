@@ -18,8 +18,9 @@ class Keyboard_Mouse():
         # Check preconditions
         assert isinstance(game, Game), "Invalid 'game' parameter. Expected a valid Game object."
 
-        # Call the superclass constructor (if applicable)
-        super().__init__(game)
+        self.game = game  # Initialize the 'game' instance variable
+
+        self.mouse_captured = False  # Initialize the 'mouse_captured' instance variable to False
 
         # Set the game's mouse and keyboard event handlers
         self.game.on_mouse_press = self.on_mouse_press
@@ -39,8 +40,8 @@ class Keyboard_Mouse():
         """
         # No preconditions for mouse press events
 
-        if not self.game.mouse_captured:
-            self.game.mouse_captured = True
+        if not self.mouse_captured:
+            self.mouse_captured = True
             self.game.set_exclusive_mouse(True)
             return
 
@@ -62,7 +63,7 @@ class Keyboard_Mouse():
         """
         # No preconditions for mouse motion events
 
-        if self.game.mouse_captured:
+        if self.mouse_captured:
             sensitivity = 0.004
 
             self.game.player.rotation[0] += delta_x * sensitivity
@@ -93,7 +94,7 @@ class Keyboard_Mouse():
         @param[in] modifiers: The key modifiers that were active.
         """
         # Check preconditions
-        assert self.game.mouse_captured, "Key press events should not be handled when the mouse is not captured."
+        assert self.mouse_captured, "Key press events should not be handled when the mouse is not captured."
 
         if key == pyglet.window.key.D:
             self.start_move(self.MoveMode.RIGHT)
@@ -116,7 +117,7 @@ class Keyboard_Mouse():
         @param[in] modifiers: The key modifiers that were active.
         """
         # Check preconditions
-        assert self.game.mouse_captured, "Key release events should not be handled when the mouse is not captured."
+        assert self.mouse_captured, "Key release events should not be handled when the mouse is not captured."
 
         if key == pyglet.window.key.D:
             self.end_move(self.MoveMode.RIGHT)
