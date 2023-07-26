@@ -51,3 +51,11 @@ class Joystick:
 
 if __name__ == '__main__':
     unittest.main()
+
+"""
+expected output:
+Ran test in 0.000s
+
+OK
+
+"""
