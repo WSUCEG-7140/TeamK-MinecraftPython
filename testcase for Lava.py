@@ -1,3 +1,5 @@
+#test cases for josephreddy-#issue21
+
 """
 Tests from lava.py
 """
