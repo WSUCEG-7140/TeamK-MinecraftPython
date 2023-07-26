@@ -1,3 +1,5 @@
+#test cases for josephreddy-#issue18
+
 """
 Tests from joystick.py
 """
