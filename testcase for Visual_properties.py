@@ -1,24 +1,23 @@
 #test cases for josephreddy-#issue19
 
 """
-Tests from visual-properties.py
+Tests for Visual-properties.py
 """
 
 def process_test_case(test_case_number, transparent, transparency, is_cube, glass, translucent, colliders, vertex_positions, tex_coords, shading_values):
     """
     Process a test case.
 
-    Args:
-        test_case_number (int): The test case number.
-        transparent (bool): Indicates whether the object is transparent.
-        transparency (int): Transparency level on a scale of 0-10.
-        is_cube (bool): Indicates whether the object is a cube.
-        glass (bool): Indicates whether the object is made of glass.
-        translucent (bool): Indicates whether the object is translucent.
-        colliders (list): List of collider objects.
-        vertex_positions (list): List of vertex positions for the object.
-        tex_coords (list): List of texture coordinates for the object.
-        shading_values (list): List of shading values for the object.
+    @param[in] test_case_number (int): The test case number.
+    @param[in] transparent (bool): Indicates whether the object is transparent.
+    @param[in] transparency (int): Transparency level on a scale of 0-10.
+    @param[in] is_cube (bool): Indicates whether the object is a cube.
+    @param[in] glass (bool): Indicates whether the object is made of glass.
+    @param[in] translucent (bool): Indicates whether the object is translucent.
+    @param[in] colliders (list): List of collider objects.
+    @param[in] vertex_positions (list): List of vertex positions for the object.
+    @param[in] tex_coords (list): List of texture coordinates for the object.
+    @param[in] shading_values (list): List of shading values for the object.
     """
     print(f"Test Case {test_case_number}:")
     print("Transparent:", transparent)
