@@ -1,3 +1,8 @@
+"""
+https://github.com/WSUCEG-7140/TeamK-MinecraftPython/issues/27
+"""
+
+
 import pyglet
 from pyglet.gl import *
 from math import sin, cos, pi
@@ -8,6 +13,7 @@ Create vertex data for a simple textured sphere
 """
 def create_sun(radius, slices, stacks):
     vertices = []
+
     for stack in range(stacks + 1):
         for slice in range(slices):
             x = radius * cos(2 * pi * slice / slices) * sin(pi * stack / stacks)
