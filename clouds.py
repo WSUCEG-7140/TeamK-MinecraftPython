@@ -1,3 +1,8 @@
+"""
+https://github.com/WSUCEG-7140/TeamK-MinecraftPython/issues/10
+"""
+
+
 import pyglet
 from pyglet.gl import *
 from random import randint
