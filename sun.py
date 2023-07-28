@@ -46,4 +46,3 @@ def draw_sun(sphere_vertex_list):
 
 def update(dt):
     pass
-
