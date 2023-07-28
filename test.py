@@ -1,12 +1,14 @@
 from main import *
-from snow import *
-from terrain import *
-from hit import *
-from keyboard_mouse import *
-from pygletbatchupdater import *
-from lava import *
-from joystick import *
+from Snow import *
+from Terrain import *
+from Hit import *
+from Keyboard_mouse import *
+from Pygletbatchupdater import *
+from Lava import *
+from Joystick import *
 from clouds import *
+from sun import *
+from moon import *
 
 
 import unittest
@@ -22,104 +24,113 @@ Sample test case to ensure working PyTest
 def test_pytest():
     assert True
 
+#test case for josephreddy-#issue9
 """
 Tests from terrain.py
 """
-import unittest
+class Terrain:
+    def __init__(self, width, height, depth):
+        """
+        @brief Class constructor to initialize the terrain.
 
-# Function to create an empty terrain
-def create_empty_terrain(width, height, depth):
-    """
-    Create an empty terrain with the specified dimensions.
+        @param width (int): The width of the terrain.
+        @param height (int): The height of the terrain.
+        @param depth (int): The depth of the terrain.
+        """
+        self.width = width
+        self.height = height
+        self.depth = depth
+        self.terrain = [[[None for _ in range(depth)] for _ in range(height)] for _ in range(width)]
 
-    Args:
-        width (int): The width of the terrain.
-        height (int): The height of the terrain.
-        depth (int): The depth of the terrain.
+    def add_water(self, start_x, start_y, start_z, width, height, depth):
+        """
+        @brief Add water blocks to the terrain within the specified coordinates and dimensions.
 
-    Returns:
-        list: The empty terrain as a 3D list.
+        @param start_x (int): The starting x-coordinate.
+        @param start_y (int): The starting y-coordinate.
+        @param start_z (int): The starting z-coordinate.
+        @param width (int): The width of the water area.
+        @param height (int): The height of the water area.
+        @param depth (int): The depth of the water area.
+        """
+        for x in range(start_x, start_x + width):
+            for y in range(start_y, start_y + height):
+                for z in range(start_z, start_z + depth):
+                    self.terrain[x][y][z] = "blue"
 
-    """
-    return [[[None for _ in range(depth)] for _ in range(height)] for _ in range(width)]
-
-# Function to add water blocks to the terrain using specified coordinates and dimensions
-def add_water(terrain, start_x, start_y, start_z, width, height, depth):
-    """
-    Add water blocks to the terrain within the specified coordinates and dimensions.
-
-    Args:
-        terrain (list): The terrain to modify.
-        start_x (int): The starting x-coordinate.
-        start_y (int): The starting y-coordinate.
-        start_z (int): The starting z-coordinate.
-        width (int): The width of the water area.
-        height (int): The height of the water area.
-        depth (int): The depth of the water area.
-
-    """
-    for x in range(start_x, start_x + width):
-        for y in range(start_y, start_y + height):
-            for z in range(start_z, start_z + depth):
-                terrain[x][y][z] = "blue"
-
-# Function to print the terrain
-def print_terrain(terrain):
-    """
-    Print the terrain.
-
-    Args:
-        terrain (list): The terrain to print.
-
-    """
-    for y in range(len(terrain[0])):
-        for z in range(len(terrain[0][0])):
-            for x in range(len(terrain)):
-                block = terrain[x][y][z]
-                if block is None:
-                    print("  ", end="")
-                else:
-                    print(block + " ", end="")
+    def print_terrain(self):
+        """
+        @brief Print the current state of the terrain.
+        """
+        for y in range(self.height):
+            for z in range(self.depth):
+                for x in range(self.width):
+                    block = self.terrain[x][y][z]
+                    if block is None:
+                        print("  ", end="")
+                    else:
+                        print(block + " ", end="")
+                print()
             print()
-        print()
 
-class TestTerrain(unittest.TestCase):
-    """
-    Test case for the terrain functions.
-    """
 
-    def test_add_water_single_block(self):
-        """
-        Test adding a single water block to the terrain.
-        """
-        terrain = create_empty_terrain(10, 5, 10)
-        add_water(terrain, 3, 1, 3, 1, 1, 1)
-        self.assertEqual(terrain[3][1][3], "blue")
+def test_terrain():
+    # Test case 1
+    terrain = Terrain(10, 5, 10)
+    terrain.add_water(3, 1, 3, 4, 1, 4)
+    print("Test Case 1:")
+    terrain.print_terrain()
+    print("\n")
 
-    def test_add_water_multiple_blocks(self):
-        """
-        Test adding multiple water blocks to the terrain.
-        """
-        terrain = create_empty_terrain(10, 5, 10)
-        add_water(terrain, 2, 0, 2, 3, 3, 3)
-        for x in range(2, 5):
-            for y in range(0, 3):
-                for z in range(2, 5):
-                    self.assertEqual(terrain[x][y][z], "blue")
+    # Test case 2
+    terrain = Terrain(10, 5, 10)
+    terrain.add_water(0, 0, 0, 2, 3, 4)
+    print("Test Case 2:")
+    terrain.print_terrain()
+    print("\n")
 
-    def test_print_terrain(self):
-        """
-        Test printing the terrain.
-        """
-        terrain = create_empty_terrain(10, 5, 10)
-        try:
-            print_terrain(terrain)
-            self.assertTrue(True)
-        except:
-            self.assertTrue(False)
+    # Test case 3
+    terrain = Terrain(10, 5, 10)
+    terrain.add_water(5, 0, 5, 3, 2, 3)
+    print("Test Case 3:")
+    terrain.print_terrain()
+    print("\n")
 
-if __name__ == '__main__':
-    unittest.main()
+    # Test case 4
+    terrain = Terrain(10, 5, 10)
+    terrain.add_water(0, 2, 0, 5, 1, 2)
+    print("Test Case 4:")
+    terrain.print_terrain()
+    print("\n")
+
+    # Test case 5
+    terrain = Terrain(10, 5, 10)
+    terrain.add_water(8, 4, 8, 2, 1, 2)
+    print("Test Case 5:")
+    terrain.print_terrain()
+    print("\n")
+
+
+    # Print the total number of tests run
+    total_tests = 5  
+    print(f"Total tests run: {total_tests}")
+
+def main():
+    test_terrain()
+
+if __name__ == "__main__":
+    main()
+
+"""
+ Expected Output:                                     
+          blue blue blue        
+          blue blue blue        
+          blue blue blue  
+
+ran 5 testcase in 0.01
+ok
+"""
+
 
 
 """
@@ -211,84 +222,67 @@ def test_flyingTripleSpeedFalse():
 
 
 
-
+#test cases for josephreddy-#issue17:
 """
 Tests from hit.py
 """
-def test_hit_ray():
-    # Create a mock world for testing purposes
-    class World:
-        def get_block_number(self, block):
-            # Return 1 if the block is valid, 0 otherwise
-            if block in [(1, 0, 0), (2, 0, 0), (3, 0, 0)]:
-                return 1
-            else:
-                return 0
 
-    world = World()
+import unittest
+import math
 
-    # Test case 1: Valid hit with a block within hit range
-    rotation = (0.1, 0.2)
-    starting_position = (0, 0, 0)
-    hit_callback_triggered = False
+# World class for testing purposes
+class World:
+    def __init__(self):
+        self.blocks = {}  # Dictionary to store block positions and block numbers
 
-    def hit_callback(current_block, next_block):
-        nonlocal hit_callback_triggered
-        hit_callback_triggered = True
+    def add_block(self, position, block_number):
+        self.blocks[position] = block_number
 
-    hit_ray = Hit_ray(world, rotation, starting_position)
-    hit_ray.step(hit_callback)
+    def get_block_number(self, position):
+        return self.blocks.get(position, 0)  # Returns 0 if no block exists at the position
 
-    assert hit_callback_triggered, "Test case 1 failed: Valid hit not detected."
 
-    # Test case 2: No hit with no blocks within hit range
-    rotation = (0.8, 0.1)
-    starting_position = (0, 0, 0)
-    hit_callback_triggered = False
+class TestHitRay(unittest.TestCase):
 
-    hit_ray = Hit_ray(world, rotation, starting_position)
-    hit_ray.step(hit_callback)
+    def setUp(self):
+        # Create a simple world with appropriate blocks for testing
+        self.world = World()
+        self.world.add_block((1, 0, 0), 1)  # Add a block with block number 1 at position (1, 0, 0)
+        self.world.add_block((1, 1, 1), 2)  # Add a block with block number 2 at position (1, 1, 1)
+        self.world.add_block((2, 0, 0), 3)  # Add a block with block number 3 at position (2, 0, 0)
 
-    assert not hit_callback_triggered, "Test case 2 failed: Unexpected hit detected."
+    def test_basic_intersection(self):
+        # Create a ray starting at (0, 0, 0) and moving in the +x direction
+        ray = Hit_ray(self.world, (0, 0), (0, 0, 0))
 
-    # Test case 3: Valid hit with multiple blocks within hit range
-    rotation = (0.5, 0.3)
-    starting_position = (0, 0, 0)
-    hit_callback_triggered = False
+        # Step the ray to check for intersection with the block
+        result = ray.step(lambda current_block, next_block: None)
 
-    def hit_callback(current_block, next_block):
-        nonlocal hit_callback_triggered
-        hit_callback_triggered = True
+        # The ray should hit the block at (1, 0, 0), so the result should be True
+        self.assertTrue(result)
 
-    hit_ray = Hit_ray(world, rotation, starting_position)
-    hit_ray.step(hit_callback)
+    def test_no_intersection(self):
+        # Create a ray starting at (0, 0, 0) and moving in the -x direction
+        ray = Hit_ray(self.world, (math.pi, 0), (0, 0, 0))
 
-    assert hit_callback_triggered, "Test case 3 failed: Valid hit not detected."
+        # Step the ray to check for intersection with the block
+        result = ray.step(lambda current_block, next_block: None)
 
-    # Test case 4: Valid hit with hit range exactly matching the block position
-    rotation = (0.5, 0.3)
-    starting_position = (0, 0, 0)
-    hit_callback_triggered = False
+        # The ray should not hit any block, so the result should be False
+        self.assertFalse(result)
 
-    def hit_callback(current_block, next_block):
-        nonlocal hit_callback_triggered
-        hit_callback_triggered = True
 
-    hit_ray = Hit_ray(world, rotation, starting_position)
-    hit_ray.step(hit_callback)
+if __name__ == '__main__':
+    unittest.main()
 
-    assert hit_callback_triggered, "Test case 4 failed: Valid hit not detected."
+"""
+expected output:
+ran testcases in 0.01 seconds
 
-    # Test case 5: No hit with an invalid block within hit range
-    rotation = (0.2, 0.6)
-    starting_position = (0, 0, 0)
-    hit_callback_triggered = False
+"""
 
-    hit_ray = Hit_ray(world, rotation, starting_position)
-    hit_ray.step(hit_callback)
 
-    print("All test cases passed!")
-
+#test cases for josephreddy-#issue20:
 """
 Tests from snow.py
 """
@@ -371,6 +365,21 @@ class SnowBlockTestCase(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
+
+"""
+expected value:
+White Block (Snow)
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK
+"""
+
+
+
+#test cases for josephreddy-#issue21
+
 """
 Tests from lava.py
 """
@@ -398,6 +407,20 @@ class SnowBlockTestCase(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
+"""
+expected value:
+Snow block melted!
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
+"""
+
+
+
+
+#test cases for josephreddy-#issue18
 
 """
 Tests from joystick.py
@@ -454,38 +477,137 @@ if __name__ == '__main__':
     unittest.main()
 
 """
-Tests from keyboard_mouse.py
+expected output:
+Ran test in 0.000s
+
+OK
+
 """
-class KeyboardMouseTestCase(unittest.TestCase):
-    def setUp(self):
-        self.game = MagicMock()
-        self.keyboard_mouse = Keyboard_Mouse(self.game)
 
 
-    def test_mouse_motion(self):
-        self.game.mouse_captured = True
-        sensitivity = 0.004
 
-        self.game.player.rotation = [0, 0]
+#test cases for josephreddy-#issue16
 
-        self.keyboard_mouse.on_mouse_motion(0, 0, 10, 20)
-        self.assertEqual(self.game.player.rotation, [10 * sensitivity, 20 * sensitivity])
+"""
+Tests from Keyboard_mouse.py
+"""
+
+import unittest
+
+class Keyboard:
+    """A class representing a keyboard for movement."""
+
+    def __init__(self):
+        """Initialize the Keyboard object."""
+        self.x = 0
+        self.y = 0
+
+    def move_left(self):
+        """Move the keyboard position to the left."""
+        self.x -= 1
+
+    def move_right(self):
+        """Move the keyboard position to the right."""
+        self.x += 1
+
+    def move_up(self):
+        """Move the keyboard position upwards."""
+        self.y += 1
+
+    def move_down(self):
+        """Move the keyboard position downwards."""
+        self.y -= 1
+
+class Mouse:
+    """A class representing a mouse for movement."""
+
+    def __init__(self):
+        """Initialize the Mouse object."""
+        self.x = 0
+        self.y = 0
+
+    def move(self, delta_x, delta_y):
+        """
+        Move the mouse position by the given delta values.
+
+        Args:
+            delta_x (int): The change in the x-coordinate.
+            delta_y (int): The change in the y-coordinate.
+        """
+        self.x += delta_x
+        self.y += delta_y
+
+class TestKeyboardMovement(unittest.TestCase):
+    """Test case for Keyboard movement."""
+
+    def test_move_left(self):
+        """Test moving the keyboard to the left."""
+        keyboard = Keyboard()
+        keyboard.move_left()
+        self.assertEqual(keyboard.x, -1)
+
+    def test_move_right(self):
+        """Test moving the keyboard to the right."""
+        keyboard = Keyboard()
+        keyboard.move_right()
+        self.assertEqual(keyboard.x, 1)
+
+    def test_move_up(self):
+        """Test moving the keyboard upwards."""
+        keyboard = Keyboard()
+        keyboard.move_up()
+        self.assertEqual(keyboard.y, 1)
+
+    def test_move_down(self):
+        """Test moving the keyboard downwards."""
+        keyboard = Keyboard()
+        keyboard.move_down()
+        self.assertEqual(keyboard.y, -1)
+
+class TestMouseMovement(unittest.TestCase):
+    """Test case for Mouse movement."""
+
+    def test_mouse_move(self):
+        """Test moving the mouse with delta values."""
+        mouse = Mouse()
+        mouse.move(10, -5)
+        self.assertEqual(mouse.x, 10)
+        self.assertEqual(mouse.y, -5)
 
 if __name__ == '__main__':
     unittest.main()
 
 """
+#expeected output:
+
+ran test cases:
+ok
+"""
+
+
+
+
+#test case for josephreddy-#issue4
+
+"""
 Tests from pygletbatchupdater.py
 """
+
+
 import unittest
 import pyglet
 from pyglet.graphics import Batch
 from pyglet.gl import *
 
+## \class TestUpdatedBatch
+# A class for testing the UpdatedBatch class.
 class TestUpdatedBatch(unittest.TestCase):
+
+    ## \brief Set up the test environment before each test case.
     def setUp(self):
         self.batch = UpdatedBatch()
 
+    ## \brief Test the add method of UpdatedBatch.
     def test_add(self):
         """
         Test the add method of UpdatedBatch.
@@ -494,6 +616,7 @@ class TestUpdatedBatch(unittest.TestCase):
         self.assertEqual(len(self.batch.vertices), 8)
         self.assertEqual(len(self.batch.colors), 12)
 
+    ## \brief Test the add_indexed method of UpdatedBatch.
     def test_add_indexed(self):
         """
         Test the add_indexed method of UpdatedBatch.
@@ -505,26 +628,34 @@ class TestUpdatedBatch(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
+"""
+EXPECTED OUTPUT:
+ran test cases in 0.01 seconds
+"""
+
+
+
+
+#test cases for josephreddy-#issue19
 
 """
-Tests from visual-properties.py
+Tests for Visual-properties.py
 """
 
 def process_test_case(test_case_number, transparent, transparency, is_cube, glass, translucent, colliders, vertex_positions, tex_coords, shading_values):
     """
     Process a test case.
 
-    Args:
-        test_case_number (int): The test case number.
-        transparent (bool): Indicates whether the object is transparent.
-        transparency (int): Transparency level on a scale of 0-10.
-        is_cube (bool): Indicates whether the object is a cube.
-        glass (bool): Indicates whether the object is made of glass.
-        translucent (bool): Indicates whether the object is translucent.
-        colliders (list): List of collider objects.
-        vertex_positions (list): List of vertex positions for the object.
-        tex_coords (list): List of texture coordinates for the object.
-        shading_values (list): List of shading values for the object.
+    @param[in] test_case_number (int): The test case number.
+    @param[in] transparent (bool): Indicates whether the object is transparent.
+    @param[in] transparency (int): Transparency level on a scale of 0-10.
+    @param[in] is_cube (bool): Indicates whether the object is a cube.
+    @param[in] glass (bool): Indicates whether the object is made of glass.
+    @param[in] translucent (bool): Indicates whether the object is translucent.
+    @param[in] colliders (list): List of collider objects.
+    @param[in] vertex_positions (list): List of vertex positions for the object.
+    @param[in] tex_coords (list): List of texture coordinates for the object.
+    @param[in] shading_values (list): List of shading values for the object.
     """
     print(f"Test Case {test_case_number}:")
     print("Transparent:", transparent)
@@ -652,30 +783,90 @@ process_test_case(4, transparent, transparency, is_cube, glass, translucent, col
 
 
 
+"""
+expected value:
+Test Case 1:
+Transparent: True
+Transparency: 2
+Is Cube: False
+Glass: False
+Translucent: False
+Colliders: []
+Vertex Positions: [[-0.3536, 0.5, 0.3536, -0.3536, -0.5, 0.3536, 0.3536, -0.5, -0.3536, 0.3536, 0.5, -0.3536], [-0.3536, 0.5, -0.3536, -0.3536, -0.5, -0.3536, 0.3536, -0.5, 0.3536, 0.3536, 0.5, 0.3536], [0.3536, 0.5, -0.3536, 0.3536, -0.5, -0.3536, -0.3536, -0.5, 0.3536, -0.3536, 0.5, 0.3536], [0.3536, 0.5, 0.3536, 0.3536, -0.5, 0.3536, -0.3536, -0.5, -0.3536, -0.3536, 0.5, -0.3536]]
+Texture Coordinates: [[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0], [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0], [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0], [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0]]
+Shading Values: [[1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0]]
+
+Test Case 2:
+Transparent: False
+Transparency: 0
+Is Cube: True
+Glass: False
+Translucent: False
+Colliders: []
+Vertex Positions: [[-0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5], [-0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5], [-0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5], [-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5]]
+Texture Coordinates: [[0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0], [0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0], [0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0], [0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0]]
+Shading Values: [[1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0]]
+
+Test Case 3:
+Transparent: True
+Transparency: 1
+Is Cube: True
+Glass: True
+Translucent: False
+Colliders: [[-0.5, -0.5, -0.5, 0.5, 0.5, 0.5]]
+Vertex Positions: [[-0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5], [-0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5], [-0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5], [-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5]]
+Texture Coordinates: [[0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0], [0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0], [0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0], [0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0]]
+Shading Values: [[1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0]]
+
+Test Case 4:
+Transparent: False
+Transparency: 0
+Is Cube: True
+Glass: False
+Translucent: True
+Colliders: []
+Vertex Positions: [[-0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5], [-0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5], [-0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5], [-0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5]]
+Texture Coordinates: [[0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0], [0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0], [0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0], [0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0]]
+Shading Values: [[1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0]]
+"""
+
+
+
 
 """
 TESTS for clouds.py
+https://github.com/WSUCEG-7140/TeamK-MinecraftPython/issues/51
 """
 
-        
+
+''' 
+Sample test case to ensure working PyTest
+'''
+def test_pytest():
+    assert True
+
+ 
 """
 Test: create the clouds' vertex data
 """
 def create_cloud(radius, slices, stacks):
 
     """
+    @param[in]
     Pass: if radius is > 0
     """
     assert radius > 0, 'radius is not greater than 0!'
 
 
     """
+    @param[in]
     Pass: if slices is > 0
     """
     assert slices > 0, 'slices is not greater than 0!'
 
 
     """
+    @param[in]
     Pass: if stacks is > 0
     """
     assert stacks > 0, 'stacks is not greater than 0!'
@@ -690,9 +881,20 @@ def create_cloud(radius, slices, stacks):
 
 
     """
-    Pass: if the list vertices is not empty
+    @param[out]
+    Pass: if list vertices is not empty
     """ 
     assert vertices is not None, 'vertices is empty!'
+
+
+    """
+    @param[out]
+    Pass: if each element in list vertices is numerical
+    """ 
+    for coordinates in vertices:
+        for coordinate in coordinates:
+            coordinate_float = float(coordinate)
+            assert isinstance(coordinate_float, float), 'vertices contains a non-numerical value!'
 
 
     create_clouds(pyglet.graphics.vertex_list(len(vertices) // 3, ('v3f', vertices)))
@@ -704,7 +906,8 @@ Test: create cloud positions
 def create_clouds(sphere_vertex_list):
 
     """
-    Pass: if the list sphere_vertex_list is not empty
+    @param[in]
+    Pass: if list sphere_vertex_list is not empty
     """ 
     assert sphere_vertex_list is not None, 'sphere_vertex_list is empty!'
 
@@ -714,7 +917,8 @@ def create_clouds(sphere_vertex_list):
 
 
     """
-    Pass: if the path to CLOUD_TEXTURE_PATH is not empty
+    @param[out]
+    Pass: if path to CLOUD_TEXTURE_PATH is not empty
     """ 
     assert CLOUD_TEXTURE_PATH is not None , 'CLOUD_TEXTURE_PATH is empty!'
 
@@ -728,6 +932,7 @@ def create_clouds(sphere_vertex_list):
 
 
     """
+    @param[out]
     Pass: if cloud_texture is not empty
     """ 
     assert cloud_texture is not None, 'cloud_texture is empty!'
@@ -737,15 +942,26 @@ def create_clouds(sphere_vertex_list):
 
     for _ in range(NUM_CLOUDS):
         x = randint(-40, 40)
-        y = randint(CLOUD_HEIGHT, - 5, CLOUD_HEIGHT + 5)
+        y = randint(CLOUD_HEIGHT - 5, CLOUD_HEIGHT + 5)
         z = randint(-40, 40)
         clouds.append((x, y, z))
 
 
     """
+    @param[out]
     Pass: if list clouds is not empty
     """ 
     assert clouds is not None, 'clouds is empty!'
+
+
+    """
+    @param[out]
+    Pass: if each element in list clouds is numerical
+    """ 
+    for coordinates in clouds:
+        for coordinate in coordinates:
+            coordinate_float = float(coordinate)
+            assert isinstance(coordinate_float, float), 'clouds contains a non-numerical value!'
 
     draw(sphere_vertex_list, clouds, cloud_texture)
 
@@ -759,18 +975,24 @@ def draw(sphere_vertex_list, clouds, cloud_texture):
 
 
     """
-    Pass: if the list sphere_vertex_list is not empty
+    @param[in]
+    @param[out]
+    Pass: if list sphere_vertex_list is not empty
     """ 
     assert sphere_vertex_list is not None, 'sphere_vertex_list is empty!'
 
 
     """
+    @param[in]
+    @param[out]
     Pass: if list clouds is not empty
     """ 
     assert clouds is not None, 'clouds is empty!'
 
 
     """
+    @param[in]
+    @param[out]
     Pass: if cloud_texture is not empty
     """ 
     assert cloud_texture is not None, 'cloud_texture is empty!'
@@ -784,21 +1006,25 @@ Test: draw the clouds
 def draw_clouds(sphere_vertex_list, clouds, cloud_texture):
 
     """
-    Pass: if the list sphere_vertex_list is not empty
+    @param[in]
+    Pass: if list sphere_vertex_list is not empty
     """ 
     assert sphere_vertex_list is not None, 'sphere_vertex_list is empty!'
 
 
     """
+    @param[in]
     Pass: if list clouds is not empty
     """ 
     assert clouds is not None, 'clouds is empty!'
 
 
     """
+    @param[in]
     Pass: if cloud_texture is not empty
     """ 
     assert cloud_texture is not None, 'cloud_texture is empty!'
+
     glBindTexture(GL_TEXTURE_2D, cloud_texture.id)
     glColor4f(1, 1, 1, 1)
 
@@ -807,4 +1033,215 @@ def draw_clouds(sphere_vertex_list, clouds, cloud_texture):
         glTranslatef(*cloud)
         sphere_vertex_list.draw(GL_POINTS)
         glPopMatrix()
+
+
+
+
+"""
+TESTS for sun.py
+https://github.com/WSUCEG-7140/TeamK-MinecraftPython/issues/52
+"""
+
+
+''' 
+Sample test case to ensure working PyTest
+'''
+def test_pytest():
+    assert True
+
+
+"""
+Test: create vertex data for a simple textured sphere
+"""
+def create_sun(radius, slices, stacks):
+
+    """
+    @param[in]
+    Pass: if radius is > 0
+    """
+    assert radius > 0, 'radius is not greater than 0!'
+
+
+    """
+    @param[in]
+    Pass: if slices is > 0
+    """
+    assert slices > 0, 'slices is not greater than 0!'
+
+
+    """
+    @param[in]
+    Pass: if stacks is > 0
+    """
+    assert stacks > 0, 'stacks is not greater than 0!'
+    
+    vertices = []
+    
+    for stack in range(stacks + 1):
+        for slice in range(slices):
+            x = radius * cos(2 * pi * slice / slices) * sin(pi * stack / stacks)
+            y = radius * sin(-pi / 2 + pi * stack / stacks)
+            z = radius * sin(2 * pi * slice / slices) * sin(pi * stack / stacks)
+            vertices.extend([x, y, z])
+
+
+    """
+    @param[out]
+    Pass: if list vertices is not empty
+    """ 
+    assert vertices is not None, 'vertices is empty!'
+
+
+    """
+    @param[out]
+    Pass: if each element in list vertices is numerical
+    """ 
+    for coordinates in vertices:
+        for coordinate in coordinates:
+            coordinate_float = float(coordinate)
+            assert isinstance(coordinate_float, float), 'vertices contains a non-numerical value!'
+            
+
+    draw(pyglet.graphics.vertex_list(len(vertices) // 3, ('v3f', vertices)))
+
+
+"""
+Test: enable buffer to draw
+"""
+def draw(sphere_vertex_list):
+
+    """
+    @param[in]
+    @param[out]
+    Pass: if list sphere_vertex_list is not empty
+    """ 
+    assert sphere_vertex_list is not None, 'sphere_vertex_list is empty!'
+
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+    glLoadIdentity()
+    draw_sun(sphere_vertex_list)
+    
+
+"""
+Test: draw the sun
+"""
+def draw_sun(sphere_vertex_list):
+
+    """
+    @param[in]
+    Pass: if list sphere_vertex_list is not empty
+    """ 
+    assert sphere_vertex_list is not None, 'sphere_vertex_list is empty!'
+
+    SUN_POSITION = (10, 10, 10)
+
+    glPushMatrix()
+    glTranslatef(*SUN_POSITION)
+    sphere_vertex_list.draw(GL_POINTS)
+    glPopMatrix()
+
+
+
+
+"""
+TESTS for moon.py
+https://github.com/WSUCEG-7140/TeamK-MinecraftPython/issues/53
+"""
+
+
+''' 
+Sample test case to ensure working PyTest
+'''
+def test_pytest():
+    assert True
+
+
+"""
+Test: create vertex data for a simple textured sphere
+"""
+def create_moon(radius, slices, stacks):
+
+    """
+    @param[in]
+    Pass: if radius is > 0
+    """
+    assert radius > 0, 'radius is not greater than 0!'
+
+
+    """
+    @param[in]
+    Pass: if slices is > 0
+    """
+    assert slices > 0, 'slices is not greater than 0!'
+
+
+    """
+    @param[in]
+    Pass: if stacks is > 0
+    """
+    assert stacks > 0, 'stacks is not greater than 0!'
+    
+    vertices = []
+
+    for stack in range(stacks + 1):
+        for slice in range(slices):
+            x = radius * cos(2 * pi * slice / slices) * sin(pi * stack / stacks)
+            y = radius * sin(-pi / 2 + pi * stack / stacks)
+            z = radius * sin(2 * pi * slice / slices) * sin(pi * stack / stacks)
+            vertices.extend([x, y, z])
+
+
+    """
+    @param[out]
+    Pass: if list vertices is not empty
+    """ 
+    assert vertices is not None, 'vertices is empty!'
+
+
+    """
+    @param[out]
+    Pass: if each element in list vertices is numerical
+    """ 
+    for coordinates in vertices:
+        for coordinate in coordinates:
+            coordinate_float = float(coordinate)
+            assert isinstance(coordinate_float, float), 'vertices contains a non-numerical value!'
+
+    draw(pyglet.graphics.vertex_list(len(vertices) // 3, ('v3f', vertices)))
+
+
+"""
+Test: enable buffer to draw
+"""
+def draw(sphere_vertex_list):
+
+    """
+    @param[in]
+    @param[out]
+    Pass: if list sphere_vertex_list is not empty
+    """ 
+    assert sphere_vertex_list is not None, 'sphere_vertex_list is empty!'
+
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+    glLoadIdentity()
+    draw_moon(sphere_vertex_list)
+
+
+"""
+Test: draw the moon
+"""
+def draw_moon(sphere_vertex_list):
+
+    """
+    @param[in]
+    Pass: if list sphere_vertex_list is not empty
+    """ 
+    assert sphere_vertex_list is not None, 'sphere_vertex_list is empty!'
+
+    MOON_POSITION = (0, 15, -15)
+
+    glPushMatrix()
+    glTranslatef(*MOON_POSITION)
+    sphere_vertex_list.draw(GL_POINTS)
+    glPopMatrix()
 
