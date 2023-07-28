@@ -106,6 +106,15 @@ class SnowBlock(Block):
         # ...
         pass
 
+    def on_collision(self, other):
+        """
+        Placeholder method for handling collisions.
+
+        @param other (Block): The other block involved in the collision.
+        """
+        # No preconditions or postconditions for this placeholder method.
+        pass
+
 
 ## @class Player
 #  @brief Represents a player in the game.
