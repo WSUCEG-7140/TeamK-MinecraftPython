@@ -26,18 +26,21 @@ Test: create the clouds' vertex data
 def create_cloud(radius, slices, stacks):
 
     """
+    @param[in]
     Pass: if radius is > 0
     """
     assert radius > 0, 'radius is not greater than 0!'
 
 
     """
+    @param[in]
     Pass: if slices is > 0
     """
     assert slices > 0, 'slices is not greater than 0!'
 
 
     """
+    @param[in]
     Pass: if stacks is > 0
     """
     assert stacks > 0, 'stacks is not greater than 0!'
@@ -52,9 +55,21 @@ def create_cloud(radius, slices, stacks):
 
 
     """
+    @param[out]
     Pass: if list vertices is not empty
     """ 
     assert vertices is not None, 'vertices is empty!'
+
+
+    """
+    @param[out]
+    Pass: if each element in list vertices is numerical
+    """ 
+    for coordinates in vertices:
+        for coordinate in coordinates:
+            coordinate_float = float(coordinate)
+            assert isinstance(coordinate_float, float), 'vertices contains a non-numerical value!'
+
 
     create_clouds(pyglet.graphics.vertex_list(len(vertices) // 3, ('v3f', vertices)))
 
@@ -65,6 +80,7 @@ Test: create cloud positions
 def create_clouds(sphere_vertex_list):
 
     """
+    @param[in]
     Pass: if list sphere_vertex_list is not empty
     """ 
     assert sphere_vertex_list is not None, 'sphere_vertex_list is empty!'
@@ -75,6 +91,7 @@ def create_clouds(sphere_vertex_list):
 
 
     """
+    @param[out]
     Pass: if path to CLOUD_TEXTURE_PATH is not empty
     """ 
     assert CLOUD_TEXTURE_PATH is not None , 'CLOUD_TEXTURE_PATH is empty!'
@@ -89,6 +106,7 @@ def create_clouds(sphere_vertex_list):
 
 
     """
+    @param[out]
     Pass: if cloud_texture is not empty
     """ 
     assert cloud_texture is not None, 'cloud_texture is empty!'
@@ -104,12 +122,14 @@ def create_clouds(sphere_vertex_list):
 
 
     """
+    @param[out]
     Pass: if list clouds is not empty
     """ 
     assert clouds is not None, 'clouds is empty!'
 
 
     """
+    @param[out]
     Pass: if each element in list clouds is numerical
     """ 
     for coordinates in clouds:
@@ -129,18 +149,24 @@ def draw(sphere_vertex_list, clouds, cloud_texture):
 
 
     """
+    @param[in]
+    @param[out]
     Pass: if list sphere_vertex_list is not empty
     """ 
     assert sphere_vertex_list is not None, 'sphere_vertex_list is empty!'
 
 
     """
+    @param[in]
+    @param[out]
     Pass: if list clouds is not empty
     """ 
     assert clouds is not None, 'clouds is empty!'
 
 
     """
+    @param[in]
+    @param[out]
     Pass: if cloud_texture is not empty
     """ 
     assert cloud_texture is not None, 'cloud_texture is empty!'
@@ -154,18 +180,21 @@ Test: draw the clouds
 def draw_clouds(sphere_vertex_list, clouds, cloud_texture):
 
     """
+    @param[in]
     Pass: if list sphere_vertex_list is not empty
     """ 
     assert sphere_vertex_list is not None, 'sphere_vertex_list is empty!'
 
 
     """
+    @param[in]
     Pass: if list clouds is not empty
     """ 
     assert clouds is not None, 'clouds is empty!'
 
 
     """
+    @param[in]
     Pass: if cloud_texture is not empty
     """ 
     assert cloud_texture is not None, 'cloud_texture is empty!'
