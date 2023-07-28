@@ -1,3 +1,8 @@
+"""
+https://github.com/WSUCEG-7140/TeamK-MinecraftPython/issues/28
+"""
+
+
 import pyglet
 from pyglet.gl import *
 from math import cos, sin, pi
@@ -41,5 +46,4 @@ def draw_moon(sphere_vertex_list):
 
 def update(dt):
     pass
-
 
