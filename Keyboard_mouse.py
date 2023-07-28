@@ -133,3 +133,46 @@ class Keyboard_Mouse():
             self.end_move(self.MoveMode.DOWN)
         elif key == pyglet.window.key.LCTRL:
             self.end_modifier(self.ModifierMode.SPRINT)
+
+class Keyboard:
+    """A class representing a keyboard for movement."""
+
+    def __init__(self):
+        """Initialize the Keyboard object."""
+        self.x = 0
+        self.y = 0
+
+    def move_left(self):
+        """Move the keyboard position to the left."""
+        self.x -= 1
+
+    def move_right(self):
+        """Move the keyboard position to the right."""
+        self.x += 1
+
+    def move_up(self):
+        """Move the keyboard position upwards."""
+        self.y += 1
+
+    def move_down(self):
+        """Move the keyboard position downwards."""
+        self.y -= 1
+
+class Mouse:
+    """A class representing a mouse for movement."""
+
+    def __init__(self):
+        """Initialize the Mouse object."""
+        self.x = 0
+        self.y = 0
+
+    def move(self, delta_x, delta_y):
+        """
+        Move the mouse position by the given delta values.
+
+        Args:
+            delta_x (int): The change in the x-coordinate.
+            delta_y (int): The change in the y-coordinate.
+        """
+        self.x += delta_x
+        self.y += delta_y

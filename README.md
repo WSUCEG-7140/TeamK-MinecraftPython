@@ -1,3 +1,20 @@
+# Group - Team K CS 7140
+Joseph Behr, James Hamilton, Joseph Reddy Yeruva 
+
+Literate programming files:
+[Clouds.py](/clouds.py)
+[Joystick.py](/Joystick.py)
+[Keyboard_mouse.py](/Keyboard_mouse.py)
+[Hit.py](/Hit.py)
+[Lava.py](/Lava.py)
+[Moon.py](/moon.py)
+[Snow.py](/Snow.py)
+[Sun.py](/sun.py)
+[Terrain.py](/Terrain.py)
+[Test.py](/test.py)
+[Pygletbatchupdater.py](/Pygletbatchupdater.py)
+
+
 # Minecraft
 
 Simple Minecraft-inspired demo written in Python and Pyglet.
@@ -38,7 +55,8 @@ The API could contain functionality for the following:
 ## How to Run
 
 ```shell
-pip install pyglet==1.5.27 # This is the latest working version for the code
+pip install pyglet
+pip install keyboard
 pip install pyopengl # Confirmed works with Python 3.11
 pip install controller # Needed for keyboard_mouse.py
 git clone https://github.com/fogleman/Minecraft.git
@@ -93,7 +111,6 @@ See the [wiki](https://github.com/fogleman/Minecraft/wiki) for this project to i
 - Mouse: look around
 - Space: jump
 - Tab: toggle flying mode
-- Left Ctrl: Hold for 3x speed modifier
 
 ### Building
 
