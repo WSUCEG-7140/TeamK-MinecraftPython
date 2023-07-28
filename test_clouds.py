@@ -3,6 +3,7 @@ TESTS for clouds.py
 https://github.com/WSUCEG-7140/TeamK-MinecraftPython/issues/51
 """
 
+
 from clouds import *
 
 
@@ -97,7 +98,7 @@ def create_clouds(sphere_vertex_list):
 
     for _ in range(NUM_CLOUDS):
         x = randint(-40, 40)
-        y = randint(CLOUD_HEIGHT, - 5, CLOUD_HEIGHT + 5)
+        y = randint(CLOUD_HEIGHT - 5, CLOUD_HEIGHT + 5)
         z = randint(-40, 40)
         clouds.append((x, y, z))
 
