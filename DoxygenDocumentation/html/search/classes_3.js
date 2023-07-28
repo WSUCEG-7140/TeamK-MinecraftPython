@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['joystick_0',['Joystick',['../classjoystick_1_1_joystick.html',1,'joystick.Joystick'],['../classtest_1_1_joystick.html',1,'test.Joystick']]],
-  ['joysticktestcase_1',['JoystickTestCase',['../classtest_1_1_joystick_test_case.html',1,'test']]]
+  ['keyboard_0',['Keyboard',['../class_keyboard__mouse_1_1_keyboard.html',1,'Keyboard_mouse.Keyboard'],['../classtest_01case_01for_01_keyboard__mouse_1_1_keyboard.html',1,'test case for Keyboard_mouse.Keyboard']]],
+  ['keyboard_5fmouse_1',['Keyboard_Mouse',['../class_keyboard__mouse_1_1_keyboard___mouse.html',1,'Keyboard_mouse']]]
 ];

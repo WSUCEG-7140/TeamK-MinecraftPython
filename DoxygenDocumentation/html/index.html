@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TeamK-MinecraftPython: Minecraft</title>
+<title>My Project: Group - Team K CS 7140</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TeamK-MinecraftPython
+   <div id="projectname">My Project
    </div>
   </td>
  </tr>
@@ -69,17 +69,23 @@ $(function() {
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Minecraft </div></div>
+  <div class="headertitle"><div class="title">Group - Team K CS 7140 </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__c_1_2_users_2joeyb_2_team_k-_minecraft_python_2_r_e_a_d_m_e"></a> Simple Minecraft-inspired demo written in Python and Pyglet.</p>
+<div class="textblock"><p><a class="anchor" id="md__c_1_2_users_2joeyb_2_team_k-_minecraft_python_2_r_e_a_d_m_e"></a>Project - <a href="https://github.com/WSUCEG-7140/TeamK-MinecraftPython">TeamK-MinecraftPython</a> James Hamilton - <a href="https://github.com/j2quik">j2quick</a> Joseph Behr - <a href="https://github.com/JosephBehr">JosephBehr</a> Joseph Reddy Yeruva <a href="https://github.com/josephreddyyeruva">josephreddyyeruva</a></p>
+<p>HTML Doxygen document found at TeamK-MinecraftPython/DoxygenDocumentation/html/index.html</p>
+<p>Literate programming files w/ Doxygen Links: <a href="../../clouds.py">Clouds.py</a> <a href="../../Joystick.py">Joystick.py</a> <a href="../../Keyboard_mouse.py">Keyboard_mouse.py</a> <a href="/Lava.py">Lava.py</a> <a href="../../moon.py">Moon.py</a> <a href="../../Snow.py">Snow.py</a> <a href="../../sun.py">Sun.py</a> <a href="../../Terrain.py">Terrain.py</a> <a href="../../test.py">Test.py</a> <a href="../../Pygletbatchupdater.py">Pygletbatchupdater.py</a></p>
+<p>Programming by Contract tests found in <a href="../../test.py">test.py</a></p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Team K - Minecraft Python Description</h1>
+<p>Simple Minecraft-inspired demo writen in Python and Pyglet.</p>
 <p><a href="http://www.youtube.com/watch?v=kC3lwK631X8">http://www.youtube.com/watch?v=kC3lwK631X8</a></p>
 <p><b>Like this project?</b></p>
 <p>You might also like my other Minecraft clone written in C using modern OpenGL (GL shader language). It performs better, has better terrain generation and saves state to a sqlite database. See here:</p>
 <p><a href="https://github.com/fogleman/Craft">https://github.com/fogleman/Craft</a></p>
-<h1><a class="anchor" id="autotoc_md1"></a>
-Goals and Vision</h1>
-<p>I would like to see this project turn into an educational tool. Kids love Minecraft and Python is a great first language. This is a good opportunity to get children excited about programming.</p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Goals and Vision</h2>
+<p>t I would like to see this project turn into an educational tool. Kids love Minecraft and Python is a great first language. This is a good opportunity to get children excited about programming.</p>
 <p>The code should become well commented and more easily configurable. It should be easy to make some simple changes and see the results quickly.</p>
 <p>I think it would be great to turn the project into more of a library / API... a Python package that you import and then use / configure to setup a world and run it. Something along these lines...</p>
 <div class="fragment"><div class="line"><span class="keyword">import</span> mc</div>
@@ -92,16 +98,19 @@ Goals and Vision</h1>
 <li>Easily configurable parameters like gravity, jump velocity, walking speed, etc.</li>
 <li>Hooks for terrain generation.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md2"></a>
-How to Run</h1>
-<div class="fragment"><div class="line">pip install pyglet==1.5.27 # This is the latest working version for the code</div>
+<h2><a class="anchor" id="autotoc_md3"></a>
+How to Run</h2>
+<div class="fragment"><div class="line">pip install pyglet==1.5.27</div>
+<div class="line">pip install keyboard</div>
+<div class="line">pip install pytest</div>
+<div class="line">pip install coverage</div>
 <div class="line">pip install pyopengl # Confirmed works with Python 3.11</div>
 <div class="line">pip install controller # Needed for keyboard_mouse.py</div>
 <div class="line">git clone https://github.com/fogleman/Minecraft.git</div>
 <div class="line">cd Minecraft</div>
 <div class="line">python main.py</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
-Mac</h2>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md4"></a>
+Mac</h3>
 <p>On Mac OS X, you may have an issue with running Pyglet in 64-bit mode. Try running Python in 32-bit mode first:</p>
 <div class="fragment"><div class="line">arch -i386 python main.py</div>
 </div><!-- fragment --><p>If that doesn't work, set Python to run in 32-bit mode by default:</p>
@@ -110,8 +119,8 @@ Mac</h2>
 <p>Or try Pyglet 1.2 alpha, which supports 64-bit mode: <br  />
 </p>
 <div class="fragment"><div class="line">pip install https://pyglet.googlecode.com/files/pyglet-1.2alpha1.tar.gz </div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
-If you don't have pip or git</h2>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md5"></a>
+If you don't have pip or git</h3>
 <p>For pip:</p>
 <ul>
 <li>Mac or Linux: install with <code>sudo easy_install pip</code> (Mac or Linux) - or (Linux) find a package called something like 'python-pip' in your package manager.</li>
@@ -123,10 +132,10 @@ If you don't have pip or git</h2>
 <li>Windows or Linux: see <a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">Installing Git</a> from the <em>Pro Git</em> book.</li>
 </ul>
 <p>See the <a href="https://github.com/fogleman/Minecraft/wiki">wiki</a> for this project to install Python, and other tips.</p>
-<h1><a class="anchor" id="autotoc_md5"></a>
-How to Play</h1>
 <h2><a class="anchor" id="autotoc_md6"></a>
-Moving</h2>
+How to Play</h2>
+<h3><a class="anchor" id="autotoc_md7"></a>
+Moving</h3>
 <ul>
 <li>W: forward</li>
 <li>S: back</li>
@@ -135,10 +144,9 @@ Moving</h2>
 <li>Mouse: look around</li>
 <li>Space: jump</li>
 <li>Tab: toggle flying mode</li>
-<li>Left Ctrl: Hold for 3x speed modifier</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
-Building</h2>
+<h3><a class="anchor" id="autotoc_md8"></a>
+Building</h3>
 <ul>
 <li>Selecting type of block to create:<ul>
 <li>1: brick</li>
@@ -149,8 +157,8 @@ Building</h2>
 <li>Mouse left-click: remove block</li>
 <li>Mouse right-click: create block</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
-Quitting</h2>
+<h3><a class="anchor" id="autotoc_md9"></a>
+Quitting</h3>
 <ul>
 <li>ESC: release mouse, then close window </li>
 </ul>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['init_5fjoysticks_0',['init_joysticks',['../classjoystick_1_1_joystick.html#ac3879d769237a6c23eabbda9d0203e1e',1,'joystick::Joystick']]],
-  ['inventory_1',['Inventory',['../classtest_1_1_inventory.html',1,'test']]],
-  ['inventoryrenderer_2',['InventoryRenderer',['../classsnow_1_1_inventory_renderer.html',1,'snow.InventoryRenderer'],['../classtest_1_1_inventory_renderer.html',1,'test.InventoryRenderer']]]
+  ['init_5fjoysticks_0',['init_joysticks',['../class_joystick_1_1_joystick.html#ab26104b0afb2749c3a475413323e8432',1,'Joystick::Joystick']]],
+  ['inventory_1',['Inventory',['../classtestcase_01for_01_snow_1_1_inventory.html',1,'testcase for Snow']]],
+  ['inventoryrenderer_2',['InventoryRenderer',['../class_snow_1_1_inventory_renderer.html',1,'Snow.InventoryRenderer'],['../classtestcase_01for_01_snow_1_1_inventory_renderer.html',1,'testcase for Snow.InventoryRenderer']]]
 ];

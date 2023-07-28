@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['testterrain_0',['TestTerrain',['../classtest_1_1_test_terrain.html',1,'test']]],
-  ['testupdatedbatch_1',['TestUpdatedBatch',['../classtest_1_1_test_updated_batch.html',1,'test']]]
+  ['updatedbatch_0',['UpdatedBatch',['../class_pygletbatchupdater_1_1_updated_batch.html',1,'Pygletbatchupdater']]]
 ];
