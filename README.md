@@ -1,11 +1,15 @@
 # Group - Team K CS 7140
-Joseph Behr, James Hamilton, Joseph Reddy Yeruva 
+Project - [TeamK-MinecraftPython](https://github.com/WSUCEG-7140/TeamK-MinecraftPython)
+James Hamilton - [j2quick](https://github.com/j2quik)
+Joseph Behr - [JosephBehr](https://github.com/JosephBehr)
+Joseph Reddy Yeruva [josephreddyyeruva](https://github.com/josephreddyyeruva)
+
+HTML Doxygen document found at /DoxygenDocumentation/html/index.html or click this [link](/DoxygenDocumentation/html/index.html)
 
 Literate programming files:
 [Clouds.py](/clouds.py)
 [Joystick.py](/Joystick.py)
 [Keyboard_mouse.py](/Keyboard_mouse.py)
-[Hit.py](/Hit.py)
 [Lava.py](/Lava.py)
 [Moon.py](/moon.py)
 [Snow.py](/Snow.py)
@@ -14,10 +18,11 @@ Literate programming files:
 [Test.py](/test.py)
 [Pygletbatchupdater.py](/Pygletbatchupdater.py)
 
+Programming by Contract tests found in [test.py](/test.py)
 
-# Minecraft
+# Team K - Minecraft Python Description
 
-Simple Minecraft-inspired demo written in Python and Pyglet.
+Simple Minecraft-inspired demo writen in Python and Pyglet.
 
 http://www.youtube.com/watch?v=kC3lwK631X8
 
@@ -28,7 +33,7 @@ You might also like my other Minecraft clone written in C using modern OpenGL (G
 https://github.com/fogleman/Craft
 
 ## Goals and Vision
-
+t
 I would like to see this project turn into an educational tool. Kids love Minecraft and Python is a great first language.
 This is a good opportunity to get children excited about programming.
 
@@ -55,8 +60,10 @@ The API could contain functionality for the following:
 ## How to Run
 
 ```shell
-pip install pyglet
+pip install pyglet==1.5.27
 pip install keyboard
+pip install pytest
+pip install coverage
 pip install pyopengl # Confirmed works with Python 3.11
 pip install controller # Needed for keyboard_mouse.py
 git clone https://github.com/fogleman/Minecraft.git
