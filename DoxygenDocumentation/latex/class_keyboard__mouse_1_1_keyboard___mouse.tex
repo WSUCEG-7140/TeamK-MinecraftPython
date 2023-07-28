@@ -1,0 +1,118 @@
+\doxysection{Keyboard\+\_\+mouse.\+Keyboard\+\_\+\+Mouse Class Reference}
+\hypertarget{class_keyboard__mouse_1_1_keyboard___mouse}{}\label{class_keyboard__mouse_1_1_keyboard___mouse}\index{Keyboard\_mouse.Keyboard\_Mouse@{Keyboard\_mouse.Keyboard\_Mouse}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_keyboard__mouse_1_1_keyboard___mouse_ad868b0d52fb2b533bfef1155560a7592}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, game)
+\item 
+\mbox{\hyperlink{class_keyboard__mouse_1_1_keyboard___mouse_aa78d84ec43ec2e27df7c0525f57677cc}{on\+\_\+mouse\+\_\+press}} (self, x, y, button, modifiers)
+\item 
+\mbox{\hyperlink{class_keyboard__mouse_1_1_keyboard___mouse_a6ad419a5499a1fc52ce0ab1456036687}{on\+\_\+mouse\+\_\+motion}} (self, x, y, delta\+\_\+x, delta\+\_\+y)
+\item 
+\mbox{\hyperlink{class_keyboard__mouse_1_1_keyboard___mouse_a66b04fad3814af3b5485419aa71c800c}{on\+\_\+mouse\+\_\+drag}} (self, x, y, delta\+\_\+x, delta\+\_\+y, buttons, modifiers)
+\item 
+\mbox{\hyperlink{class_keyboard__mouse_1_1_keyboard___mouse_a8685486126d10877831b53f2a3ef810f}{on\+\_\+key\+\_\+press}} (self, key, modifiers)
+\item 
+\mbox{\hyperlink{class_keyboard__mouse_1_1_keyboard___mouse_a440e2f19efb0b1860085cd74568bb17e}{on\+\_\+key\+\_\+release}} (self, key, modifiers)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_keyboard__mouse_1_1_keyboard___mouse_a510ca8d6b0866d1c358ab85fe067d134}\label{class_keyboard__mouse_1_1_keyboard___mouse_a510ca8d6b0866d1c358ab85fe067d134} 
+{\bfseries game}
+\item 
+\Hypertarget{class_keyboard__mouse_1_1_keyboard___mouse_af36383191003fcdeaa97c9fcae88dce9}\label{class_keyboard__mouse_1_1_keyboard___mouse_af36383191003fcdeaa97c9fcae88dce9} 
+{\bfseries mouse\+\_\+captured}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A class that handles keyboard and mouse events for the game.
+
+@pre The 'game' parameter in the constructor must be a valid game object.
+@post The appropriate event handlers will be set for the game object to respond to keyboard and mouse events.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_keyboard__mouse_1_1_keyboard___mouse_ad868b0d52fb2b533bfef1155560a7592}\label{class_keyboard__mouse_1_1_keyboard___mouse_ad868b0d52fb2b533bfef1155560a7592} 
+\index{Keyboard\_mouse.Keyboard\_Mouse@{Keyboard\_mouse.Keyboard\_Mouse}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!Keyboard\_mouse.Keyboard\_Mouse@{Keyboard\_mouse.Keyboard\_Mouse}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily Keyboard\+\_\+mouse.\+Keyboard\+\_\+\+Mouse.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{game }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initializes the Keyboard_Mouse object.
+
+@param game: The game object.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_keyboard__mouse_1_1_keyboard___mouse_a8685486126d10877831b53f2a3ef810f}\label{class_keyboard__mouse_1_1_keyboard___mouse_a8685486126d10877831b53f2a3ef810f} 
+\index{Keyboard\_mouse.Keyboard\_Mouse@{Keyboard\_mouse.Keyboard\_Mouse}!on\_key\_press@{on\_key\_press}}
+\index{on\_key\_press@{on\_key\_press}!Keyboard\_mouse.Keyboard\_Mouse@{Keyboard\_mouse.Keyboard\_Mouse}}
+\doxysubsubsection{\texorpdfstring{on\_key\_press()}{on\_key\_press()}}
+{\footnotesize\ttfamily Keyboard\+\_\+mouse.\+Keyboard\+\_\+\+Mouse.\+on\+\_\+key\+\_\+press (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key,  }\item[{}]{modifiers }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Handles key press events.
+
+@param[in] key: The key that was pressed.
+@param[in] modifiers: The key modifiers that were active.
+\end{DoxyVerb}
+ \Hypertarget{class_keyboard__mouse_1_1_keyboard___mouse_a440e2f19efb0b1860085cd74568bb17e}\label{class_keyboard__mouse_1_1_keyboard___mouse_a440e2f19efb0b1860085cd74568bb17e} 
+\index{Keyboard\_mouse.Keyboard\_Mouse@{Keyboard\_mouse.Keyboard\_Mouse}!on\_key\_release@{on\_key\_release}}
+\index{on\_key\_release@{on\_key\_release}!Keyboard\_mouse.Keyboard\_Mouse@{Keyboard\_mouse.Keyboard\_Mouse}}
+\doxysubsubsection{\texorpdfstring{on\_key\_release()}{on\_key\_release()}}
+{\footnotesize\ttfamily Keyboard\+\_\+mouse.\+Keyboard\+\_\+\+Mouse.\+on\+\_\+key\+\_\+release (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{key,  }\item[{}]{modifiers }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Handles key release events.
+
+@param[in] key: The key that was released.
+@param[in] modifiers: The key modifiers that were active.
+\end{DoxyVerb}
+ \Hypertarget{class_keyboard__mouse_1_1_keyboard___mouse_a66b04fad3814af3b5485419aa71c800c}\label{class_keyboard__mouse_1_1_keyboard___mouse_a66b04fad3814af3b5485419aa71c800c} 
+\index{Keyboard\_mouse.Keyboard\_Mouse@{Keyboard\_mouse.Keyboard\_Mouse}!on\_mouse\_drag@{on\_mouse\_drag}}
+\index{on\_mouse\_drag@{on\_mouse\_drag}!Keyboard\_mouse.Keyboard\_Mouse@{Keyboard\_mouse.Keyboard\_Mouse}}
+\doxysubsubsection{\texorpdfstring{on\_mouse\_drag()}{on\_mouse\_drag()}}
+{\footnotesize\ttfamily Keyboard\+\_\+mouse.\+Keyboard\+\_\+\+Mouse.\+on\+\_\+mouse\+\_\+drag (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{delta\+\_\+x,  }\item[{}]{delta\+\_\+y,  }\item[{}]{buttons,  }\item[{}]{modifiers }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Handles mouse drag events.
+
+@param[in] x: The x-coordinate of the mouse position.
+@param[in] y: The y-coordinate of the mouse position.
+@param[in] delta_x: The change in the x-coordinate since the last drag event.
+@param[in] delta_y: The change in the y-coordinate since the last drag event.
+@param[in] buttons: The mouse buttons that are currently pressed.
+@param[in] modifiers: The key modifiers that are active.
+\end{DoxyVerb}
+ \Hypertarget{class_keyboard__mouse_1_1_keyboard___mouse_a6ad419a5499a1fc52ce0ab1456036687}\label{class_keyboard__mouse_1_1_keyboard___mouse_a6ad419a5499a1fc52ce0ab1456036687} 
+\index{Keyboard\_mouse.Keyboard\_Mouse@{Keyboard\_mouse.Keyboard\_Mouse}!on\_mouse\_motion@{on\_mouse\_motion}}
+\index{on\_mouse\_motion@{on\_mouse\_motion}!Keyboard\_mouse.Keyboard\_Mouse@{Keyboard\_mouse.Keyboard\_Mouse}}
+\doxysubsubsection{\texorpdfstring{on\_mouse\_motion()}{on\_mouse\_motion()}}
+{\footnotesize\ttfamily Keyboard\+\_\+mouse.\+Keyboard\+\_\+\+Mouse.\+on\+\_\+mouse\+\_\+motion (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{delta\+\_\+x,  }\item[{}]{delta\+\_\+y }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Handles mouse motion events.
+
+@param[in] x: The x-coordinate of the mouse position.
+@param[in] y: The y-coordinate of the mouse position.
+@param[in] delta_x: The change in the x-coordinate since the last motion event.
+@param[in] delta_y: The change in the y-coordinate since the last motion event.
+\end{DoxyVerb}
+ \Hypertarget{class_keyboard__mouse_1_1_keyboard___mouse_aa78d84ec43ec2e27df7c0525f57677cc}\label{class_keyboard__mouse_1_1_keyboard___mouse_aa78d84ec43ec2e27df7c0525f57677cc} 
+\index{Keyboard\_mouse.Keyboard\_Mouse@{Keyboard\_mouse.Keyboard\_Mouse}!on\_mouse\_press@{on\_mouse\_press}}
+\index{on\_mouse\_press@{on\_mouse\_press}!Keyboard\_mouse.Keyboard\_Mouse@{Keyboard\_mouse.Keyboard\_Mouse}}
+\doxysubsubsection{\texorpdfstring{on\_mouse\_press()}{on\_mouse\_press()}}
+{\footnotesize\ttfamily Keyboard\+\_\+mouse.\+Keyboard\+\_\+\+Mouse.\+on\+\_\+mouse\+\_\+press (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{button,  }\item[{}]{modifiers }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Handles mouse press events.
+
+@param[in] x: The x-coordinate of the mouse position.
+@param[in] y: The y-coordinate of the mouse position.
+@param[in] button: The button that was pressed.
+@param[in] modifiers: The key modifiers that were active.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/joeyb/\+Team\+K-\/\+Minecraft\+Python/Keyboard\+\_\+mouse.\+py\end{DoxyCompactItemize}

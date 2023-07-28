@@ -4,21 +4,21 @@ James Hamilton - [j2quick](https://github.com/j2quik)
 Joseph Behr - [JosephBehr](https://github.com/JosephBehr)
 Joseph Reddy Yeruva [josephreddyyeruva](https://github.com/josephreddyyeruva)
 
-HTML Doxygen document found at /DoxygenDocumentation/html/index.html or click this [link](/DoxygenDocumentation/html/index.html)
+HTML Doxygen document found at TeamK-MinecraftPython/DoxygenDocumentation/html/index.html 
 
-Literate programming files:
-[Clouds.py](/clouds.py)
-[Joystick.py](/Joystick.py)
-[Keyboard_mouse.py](/Keyboard_mouse.py)
+Literate programming files w/ Doxygen Links:
+[Clouds.py](../../clouds.py)
+[Joystick.py](../../Joystick.py)
+[Keyboard_mouse.py](../../Keyboard_mouse.py)
 [Lava.py](/Lava.py)
-[Moon.py](/moon.py)
-[Snow.py](/Snow.py)
-[Sun.py](/sun.py)
-[Terrain.py](/Terrain.py)
-[Test.py](/test.py)
-[Pygletbatchupdater.py](/Pygletbatchupdater.py)
+[Moon.py](../../moon.py)
+[Snow.py](../../Snow.py)
+[Sun.py](../../sun.py)
+[Terrain.py](../../Terrain.py)
+[Test.py](../../test.py)
+[Pygletbatchupdater.py](../../Pygletbatchupdater.py)
 
-Programming by Contract tests found in [test.py](/test.py)
+Programming by Contract tests found in [test.py](../../test.py)
 
 # Team K - Minecraft Python Description
 

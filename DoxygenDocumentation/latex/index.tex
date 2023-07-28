@@ -1,8 +1,15 @@
-\chapter{Minecraft}
-\hypertarget{index}{}\label{index}\index{Minecraft@{Minecraft}}
+\chapter{Group -\/ Team K CS 7140}
+\hypertarget{index}{}\label{index}\index{Group -\/ Team K CS 7140@{Group -\/ Team K CS 7140}}
 \label{index_md__c_1_2_users_2joeyb_2_team_k-_minecraft_python_2_r_e_a_d_m_e}%
 \Hypertarget{index_md__c_1_2_users_2joeyb_2_team_k-_minecraft_python_2_r_e_a_d_m_e}%
- Simple Minecraft-\/inspired demo written in Python and Pyglet.
+Project -\/ \href{https://github.com/WSUCEG-7140/TeamK-MinecraftPython}{\texttt{ Team\+K-\/\+Minecraft\+Python}} James Hamilton -\/ \href{https://github.com/j2quik}{\texttt{ j2quick}} Joseph Behr -\/ \href{https://github.com/JosephBehr}{\texttt{ Joseph\+Behr}} Joseph Reddy Yeruva \href{https://github.com/josephreddyyeruva}{\texttt{ josephreddyyeruva}}
+
+HTML Doxygen document found at Team\+K-\/\+Minecraft\+Python/\+Doxygen\+Documentation/html/index.\+html
+
+Literate programming files w/ Doxygen Links\+: \href{../../clouds.py}{\texttt{ Clouds.\+py}} \href{../../Joystick.py}{\texttt{ Joystick.\+py}} \href{../../Keyboard_mouse.py}{\texttt{ Keyboard\+\_\+mouse.\+py}} \href{/Lava.py}{\texttt{ Lava.\+py}} \href{../../moon.py}{\texttt{ Moon.\+py}} \href{../../Snow.py}{\texttt{ Snow.\+py}} \href{../../sun.py}{\texttt{ Sun.\+py}} \href{../../Terrain.py}{\texttt{ Terrain.\+py}} \href{../../test.py}{\texttt{ Test.\+py}} \href{../../Pygletbatchupdater.py}{\texttt{ Pygletbatchupdater.\+py}}
+
+Programming by Contract tests found in \href{../../test.py}{\texttt{ test.\+py}}\hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{Team K -\/ Minecraft Python Description}{Team K - Minecraft Python Description}}\label{index_autotoc_md1}
+Simple Minecraft-\/inspired demo writen in Python and Pyglet.
 
 \href{http://www.youtube.com/watch?v=kC3lwK631X8}{\texttt{ http\+://www.\+youtube.\+com/watch?v=k\+C3lw\+K631\+X8}}
 
@@ -10,8 +17,8 @@
 
 You might also like my other Minecraft clone written in C using modern Open\+GL (GL shader language). It performs better, has better terrain generation and saves state to a sqlite database. See here\+:
 
-\href{https://github.com/fogleman/Craft}{\texttt{ https\+://github.\+com/fogleman/\+Craft}}\hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{Goals and Vision}{Goals and Vision}}\label{index_autotoc_md1}
-I would like to see this project turn into an educational tool. Kids love Minecraft and Python is a great first language. This is a good opportunity to get children excited about programming.
+\href{https://github.com/fogleman/Craft}{\texttt{ https\+://github.\+com/fogleman/\+Craft}}\hypertarget{index_autotoc_md2}{}\doxysubsection{\texorpdfstring{Goals and Vision}{Goals and Vision}}\label{index_autotoc_md2}
+t I would like to see this project turn into an educational tool. Kids love Minecraft and Python is a great first language. This is a good opportunity to get children excited about programming.
 
 The code should become well commented and more easily configurable. It should be easy to make some simple changes and see the results quickly.
 
@@ -34,10 +41,13 @@ The API could contain functionality for the following\+:
 \begin{DoxyItemize}
 \item Easily configurable parameters like gravity, jump velocity, walking speed, etc.
 \item Hooks for terrain generation.
-\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{How to Run}{How to Run}}\label{index_autotoc_md2}
+\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysubsection{\texorpdfstring{How to Run}{How to Run}}\label{index_autotoc_md3}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{pip\ install\ pyglet==1.5.27\ \#\ This\ is\ the\ latest\ working\ version\ for\ the\ code}
+\DoxyCodeLine{pip\ install\ pyglet==1.5.27}
+\DoxyCodeLine{pip\ install\ keyboard}
+\DoxyCodeLine{pip\ install\ pytest}
+\DoxyCodeLine{pip\ install\ coverage}
 \DoxyCodeLine{pip\ install\ pyopengl\ \#\ Confirmed\ works\ with\ Python\ 3.11}
 \DoxyCodeLine{pip\ install\ controller\ \#\ Needed\ for\ keyboard\_mouse.py}
 \DoxyCodeLine{git\ clone\ https://github.com/fogleman/Minecraft.git}
@@ -45,7 +55,7 @@ The API could contain functionality for the following\+:
 \DoxyCodeLine{python\ main.py}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md3}{}\doxysubsection{\texorpdfstring{Mac}{Mac}}\label{index_autotoc_md3}
+\hypertarget{index_autotoc_md4}{}\doxysubsubsection{\texorpdfstring{Mac}{Mac}}\label{index_autotoc_md4}
 On Mac OS X, you may have an issue with running Pyglet in 64-\/bit mode. Try running Python in 32-\/bit mode first\+:
 
 
@@ -74,7 +84,7 @@ Or try Pyglet 1.\+2 alpha, which supports 64-\/bit mode\+: ~\newline
 \DoxyCodeLine{pip\ install\ https://pyglet.googlecode.com/files/pyglet-\/1.2alpha1.tar.gz\ }
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md4}{}\doxysubsection{\texorpdfstring{If you don\textquotesingle{}t have pip or git}{If you don't have pip or git}}\label{index_autotoc_md4}
+\hypertarget{index_autotoc_md5}{}\doxysubsubsection{\texorpdfstring{If you don\textquotesingle{}t have pip or git}{If you don't have pip or git}}\label{index_autotoc_md5}
 For pip\+:
 
 
@@ -91,8 +101,8 @@ For git\+:
 \item Windows or Linux\+: see \href{http://git-scm.com/book/en/Getting-Started-Installing-Git}{\texttt{ Installing Git}} from the {\itshape Pro Git} book.
 \end{DoxyItemize}
 
-See the \href{https://github.com/fogleman/Minecraft/wiki}{\texttt{ wiki}} for this project to install Python, and other tips.\hypertarget{index_autotoc_md5}{}\doxysection{\texorpdfstring{How to Play}{How to Play}}\label{index_autotoc_md5}
-\hypertarget{index_autotoc_md6}{}\doxysubsection{\texorpdfstring{Moving}{Moving}}\label{index_autotoc_md6}
+See the \href{https://github.com/fogleman/Minecraft/wiki}{\texttt{ wiki}} for this project to install Python, and other tips.\hypertarget{index_autotoc_md6}{}\doxysubsection{\texorpdfstring{How to Play}{How to Play}}\label{index_autotoc_md6}
+\hypertarget{index_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{Moving}{Moving}}\label{index_autotoc_md7}
 
 \begin{DoxyItemize}
 \item W\+: forward
@@ -102,8 +112,7 @@ See the \href{https://github.com/fogleman/Minecraft/wiki}{\texttt{ wiki}} for th
 \item Mouse\+: look around
 \item Space\+: jump
 \item Tab\+: toggle flying mode
-\item Left Ctrl\+: Hold for 3x speed modifier
-\end{DoxyItemize}\hypertarget{index_autotoc_md7}{}\doxysubsection{\texorpdfstring{Building}{Building}}\label{index_autotoc_md7}
+\end{DoxyItemize}\hypertarget{index_autotoc_md8}{}\doxysubsubsection{\texorpdfstring{Building}{Building}}\label{index_autotoc_md8}
 
 \begin{DoxyItemize}
 \item Selecting type of block to create\+:
@@ -114,7 +123,7 @@ See the \href{https://github.com/fogleman/Minecraft/wiki}{\texttt{ wiki}} for th
 \end{DoxyItemize}
 \item Mouse left-\/click\+: remove block
 \item Mouse right-\/click\+: create block
-\end{DoxyItemize}\hypertarget{index_autotoc_md8}{}\doxysubsection{\texorpdfstring{Quitting}{Quitting}}\label{index_autotoc_md8}
+\end{DoxyItemize}\hypertarget{index_autotoc_md9}{}\doxysubsubsection{\texorpdfstring{Quitting}{Quitting}}\label{index_autotoc_md9}
 
 \begin{DoxyItemize}
 \item ESC\+: release mouse, then close window 
